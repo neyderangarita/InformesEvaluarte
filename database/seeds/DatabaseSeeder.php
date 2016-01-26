@@ -1,6 +1,6 @@
 <?php
 
-use Illu7minate\Database\Seeder;
+use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
 use GestorImagenes\Album;
