@@ -11,8 +11,9 @@
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
 					<div class="caption">
-						<H3>Simulacro {{$informe->codigo_simulacro}}</H3>
-						<p>Puntaje Total: {{$informe->proTotal}}</p>
+						<H3>{{$informe->simulacro}}</H3>
+						<p>Fecha aplicacíon: {{ $informe->FechaAplico }}</p>
+						<p>Puntaje Total: {{ $informe->proTotal }}</p>
 						<p><a href="/validado/informes/generar-informe/{{$informe->codigo_simulacro}}" class="btn btn-primary" role="button">Ver Simulacro</a></p>
 					</div>
 				</div>

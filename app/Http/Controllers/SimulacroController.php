@@ -16,12 +16,7 @@ class SimulacroController extends Controller {
 	public function getIndex()
 	{
 		$simulacros = Simulacro::table('simulacros')->select('nombre')->get();
-
-		//$id = $request->get('email');
-		//$simulacros = Simulacro::find($id)->simulacros;
 		return view('simulacros.mostrar', ['simulacros' => $simulacros]);
-
-
 	}
 
 	public function getCrearSimulacro()
@@ -31,22 +26,7 @@ class SimulacroController extends Controller {
 
 	public function postCrearSimulacro()
 	{
-
 		return view('simulacros.crear-simulacro');
-		/*
-		$usuario = Auth::user();
-		Album::create
-		(
-			[
-				'nombre' => $request->get('nombre'),
-				'descripcion' => $request->get('descripcion'),
-				'usuario_id' => $usuario->id
-			]
-		);
-
-		return redirect('/validado/albumes/')->with('creado', 'El álbum ha sido creado');
-
-		*/
 	}
 
 	public function getActualizarSimulacro()

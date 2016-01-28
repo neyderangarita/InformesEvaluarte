@@ -21,20 +21,11 @@ class InformeController extends Controller {
 	public function getGenerarInforme($id)
 	{
 		$informar = Informe::where('codigo_simulacro', $id)->first();
-		$date = date('Y-m-d');
-        $invoice = "2222";
 
-
-
-        $view =  \View::make('informes.generar-informe', compact( 'informar','date', 'invoice'))->render();
+        $view =  \View::make('informes.generar-informe', compact( 'informar'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        return $pdf->stream('invoice');
-
-		//return view('informes.mostrar', ['informes' => $informes]);
-		//return view('informes.generar-informe', ['informes' => $informes]);
-		//return view('informes.generar-informe');
-		//return "genera el informe";
+        return $pdf->stream('simulacro_saber.pdf');
 	}
 
 	public function missingMethod($parameters = array())

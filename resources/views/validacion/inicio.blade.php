@@ -65,7 +65,7 @@
 									Iniciar sesión
 								</button>
 
-								<a href="/validacion/recuperar">Oldidé mi contraseña?</a>
+								<!-- <a href="/validacion/recuperar">Oldidé mi contraseña?</a> -->
 							</div>
 						</div>
 					</form>
