@@ -5,11 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CrearTablaAlbumes extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
 	public function up()
 	{
 		Schema::create('albumes', function(Blueprint $table)
@@ -24,11 +19,6 @@ class CrearTablaAlbumes extends Migration {
 		});
 	}	
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
 	public function down()
 	{
 		Schema::drop('albumes');

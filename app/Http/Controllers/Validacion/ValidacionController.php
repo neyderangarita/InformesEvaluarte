@@ -5,7 +5,6 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
-
 use GestorImagenes\Http\Requests\IniciarSesionRequest;
 use GestorImagenes\Http\Requests\RecuperarContrasenaRequest;
 use GestorImagenes\Usuario;
@@ -19,7 +18,6 @@ class ValidacionController extends Controller
 	{
 		$this->auth = $auth;
 		$this->registrar = $registrar;
-
 		$this->middleware('guest', ['except' => 'getSalida']);
 	}
 
@@ -31,7 +29,6 @@ class ValidacionController extends Controller
 	public function postRegistro(Request $request)
 	{
 		$validator = $this->registrar->validator($request->all());
-
 		if ($validator->fails())
 		{
 			$this->throwValidationException(
@@ -40,7 +37,6 @@ class ValidacionController extends Controller
 		}
 
 		$this->auth->login($this->registrar->create($request->all()));
-
 		return redirect($this->redirectPath());
 	}
 
@@ -57,7 +53,6 @@ class ValidacionController extends Controller
 		{
 			return redirect()->intended($this->redirectPath());
 		}
-
 		return redirect($this->loginPath())
 					->withInput($request->only('email', 'remember'))
 					->withErrors([
@@ -100,7 +95,6 @@ class ValidacionController extends Controller
 	{
 		$pregunta = $request->get('pregunta');
 		$respuesta = $request->get('respuesta');
-
 		$email = $request->get('email');
 		$usuario = Usuario::where('email', '=' , $email)->first();
 
@@ -112,7 +106,6 @@ class ValidacionController extends Controller
 
 			return redirect('/validacion/inicio')->with(['recuperada' => 'La contraseña se cambió, Inciar Sesión']);
 		}
-
 		return redirect('/validacion/recuperar')->withInput($request->only('email', 'pregunta'))
 		->withErrors(['pregunta' => 'La pregunta y/o respuesta ingresada no coinciden.']);
 	}

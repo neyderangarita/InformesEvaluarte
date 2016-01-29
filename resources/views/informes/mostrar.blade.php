@@ -10,8 +10,8 @@
 		@endif
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
-					<div class="caption">
-						<H3>{{$informe->simulacro}}</H3>
+					<div class="caption">		
+						<H3>Simularcro {{ $index+1 }}</H3>
 						<p>Fecha aplicacíon: {{ $informe->FechaAplico }}</p>
 						<p>Puntaje Total: {{ $informe->proTotal }}</p>
 						<p><a href="/validado/informes/generar-informe/{{$informe->codigo_simulacro}}" class="btn btn-primary" role="button">Ver Simulacro</a></p>

@@ -9,26 +9,8 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 class Usuario extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
-
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
 	protected $table = 'usuarios';
-
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = ['id', 'nombre', 'email', 'password', 'pregunta', 'respuesta'];
-
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
+	protected $fillable = ['id', 'nombre', 'email', 'password', 'pregunta', 'respuesta', 'tipo'];
 	protected $hidden = ['password', 'remember_token'];
 
 	public function albumes()
@@ -40,5 +22,4 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	{
 		return $this->hasMany('GestorImagenes\Informe', 'codigo');
 	}
-	
 }

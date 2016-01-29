@@ -2,11 +2,8 @@
 
 use GestorImagenes\Http\Requests\MostrarFotosRequest;
 use GestorImagenes\Http\Requests\CrearFotoRequest;
-
 use Illuminate\Http\Request;
-
 use Carbon\Carbon;
-
 use GestorImagenes\Album;
 use GestorImagenes\Foto;
 
@@ -25,9 +22,7 @@ class FotoController extends Controller {
 	}
 
 	public function getCrearFoto(Request $request)
-	{
-
-		
+	{	
 		$id = $request->get('id');
 		return view('fotos.crear-foto', ['id' => $id]);
 	}
@@ -35,12 +30,9 @@ class FotoController extends Controller {
 	public function postCrearFoto(CrearFotoRequest $request)
 	{
 		$id = $request->get('id');
-
 		$imagen = $request->file('imagen');
-
 		$ruta = '/img/';
 		$nombre = sha1(Carbon::now()).'.'.$imagen->guessExtension();
-
 		$imagen->move(getcwd().$ruta, $nombre);
 
 		Foto::create
@@ -52,7 +44,6 @@ class FotoController extends Controller {
 				'album_id' => $id
 			]
 		);
-
 		return redirect("/validado/fotos?id=$id")->with('creada', 'La foto ha sido subida');
 	}
 

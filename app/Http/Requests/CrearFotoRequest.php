@@ -23,7 +23,7 @@ class CrearFotoRequest extends Request {
 			'id' => 'required|exists:albumes,id',
 			'nombre' => 'required',
 			'descripcion' => 'required',
-			'imagen' => 'required|image|max:20000'
+			'imagen' => 'required|max:20000'
 			//
 		];
 	}

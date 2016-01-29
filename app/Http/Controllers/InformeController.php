@@ -21,7 +21,6 @@ class InformeController extends Controller {
 	public function getGenerarInforme($id)
 	{
 		$informar = Informe::where('codigo_simulacro', $id)->first();
-
         $view =  \View::make('informes.generar-informe', compact( 'informar'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);

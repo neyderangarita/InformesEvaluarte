@@ -9,14 +9,9 @@ use GestorImagenes\Usuario;
 
 class UsuariosSeeder extends Seeder {
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
 	public function run()
 	{
-		for ($i=1; $i < 10; $i++) 
+		for ($i=0; $i < 11; $i++) 
 		{ 
 			Usuario::create(
 			[
@@ -25,9 +20,9 @@ class UsuariosSeeder extends Seeder {
 				'email' => "6001010$i",
 				'password' => bcrypt("6001010$i"),
 				'pregunta' => "preg$i", 
-				'respuesta' => "resp$i"
+				'respuesta' => "resp$i",
+				'tipo' => "estudiante"
 			]);
 		}
 	}
-
 }

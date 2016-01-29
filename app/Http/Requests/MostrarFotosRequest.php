@@ -16,20 +16,13 @@ class MostrarFotosRequest extends Request {
 		{
 			return true;
 		}
-
 		return false;		
 	}
 
-	/**
-	 * Get the validation rules that apply to the request.
-	 *
-	 * @return array
-	 */
 	public function rules()
 	{
 		return [
 			'id' => 'required'
 		];
 	}
-
 }

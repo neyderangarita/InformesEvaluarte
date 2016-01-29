@@ -19,20 +19,15 @@ class UsuarioController extends Controller {
 	{
 		$usuario = Auth::user();
 		$nombre = $request ->get('nombre');
-
 		$usuario->nombre = $nombre;
-
 		if ($request->has('password')) {
 			$usuario->password = bcrypt($request->get('password'));
 		}
-
 		if ($request->has('pregunta')) {
 			$usuario->pregunta = $request->get('pregunta');
 			$usuario->respuesta = $request->get('respuesta');
 		}
-
 		$usuario->save();
-
 		return redirect('/validado')->with('actualizado', 'Su perfil ha sido actualizado.');
 	}
 

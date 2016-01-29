@@ -18,7 +18,6 @@ Route::controllers(
 	'validado/albumes' => 'AlbumController',
 	'validado/informes' => 'InformeController',
 	'validado/usuario' => 'UsuarioController',
-	'validado/pdf' => 'PdfController',
 	'validado' => 'InicioController',
 	'/' => 'BienvenidaController'
 ]);
