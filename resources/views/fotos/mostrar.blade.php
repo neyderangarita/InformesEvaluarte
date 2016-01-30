@@ -19,8 +19,9 @@
 						<h3>{{$foto->nombre}}</h3>
 						<p>{{$foto->descripcion}}</p>
 					</div>
+					@if(Auth::user()->tipo === 'evaluarte')
 					<p><a href="/validado/fotos/actualizar-foto/{{$foto->id}}" class="btn btn-primary" role="button">Actualizar archivos</a></p>
-
+					@endif
 					<p><a href="{{$foto->ruta}}" class="btn btn-primary" target="_blank" role="button">Descargar</a></p>
 				</div>
 			</div>
