@@ -1,17 +1,20 @@
 <?php namespace GestorImagenes\Http\Requests;
+
 use GestorImagenes\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
 use GestorImagenes\Album;
+use GestorImagenes\Foto;
 
-class CrearFotoRequest extends Request {
+class ActualizarFotoRequest extends Request {
 
 	public function authorize()
 	{
-		//$user = Auth::user();
 		$id = $this->get('id');
-		$album = Album::find($id);
-		//$album = $user->albumes()->find($id);
-		if($album)
+		$foto = Foto::find($id);
+
+		$album = Album::find($foto->album_id);
+
+		if($foto)
 		{
 			return true;
 		}
@@ -20,13 +23,12 @@ class CrearFotoRequest extends Request {
 
 	public function rules()
 	{
-		return
-		[
-			'id' => 'required|exists:albumes,id',
+		return [
+			'id' => 'required|exists:fotos,id',
 			'nombre' => 'required',
 			'descripcion' => 'required',
-			'imagen' => 'required|max:20000'
-			//
+			'imagen' => 'max:20000',
 		];
 	}
+
 }

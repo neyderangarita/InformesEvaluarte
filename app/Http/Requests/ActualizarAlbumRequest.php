@@ -1,9 +1,10 @@
 <?php namespace GestorImagenes\Http\Requests;
+
 use GestorImagenes\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
 use GestorImagenes\Album;
 
-class CrearFotoRequest extends Request {
+class ActualizarAlbumRequest extends Request {
 
 	public function authorize()
 	{
@@ -20,13 +21,11 @@ class CrearFotoRequest extends Request {
 
 	public function rules()
 	{
-		return
-		[
+		return [
 			'id' => 'required|exists:albumes,id',
 			'nombre' => 'required',
 			'descripcion' => 'required',
-			'imagen' => 'required|max:20000'
-			//
 		];
 	}
+
 }

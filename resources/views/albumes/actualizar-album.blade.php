@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Actualizar álbum</div>
+				<div class="panel-heading">Actualizar informe</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -18,27 +18,29 @@
 						</div>
 					@endif
 					
-					<form class="form-horizontal" role="form" method="POST" action="/validado/albumes/crear-album">
+					<form class="form-horizontal" role="form" method="POST" action="/validado/albumes/actualizar-album">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+						<input type="hidden" name="id" value="{{ $album->id }}">
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Nombre</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="nombre" value="{{old('nombre')}}">
+								<input type="text" class="form-control" name="nombre" value="{{$album->nombre}}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Descripción</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="descripcion" value="{{old('descripcion')}}">
+								<input type="text" class="form-control" name="descripcion" value="{{$album->descripcion}}">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Crear álbum
+									Actualizar álbum
 								</button>
 							</div>
 						</div>

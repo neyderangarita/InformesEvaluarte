@@ -40,9 +40,13 @@
 				<ul class="nav navbar-nav">			
 					@if (Auth::guest())	
 						<li><a href="{{ url('/') }}">Inicio</a></li>
+					@elseif(Auth::user()->tipo === 'evaluarte')	
+						<li><a href="{{ url('/') }}">Inicio</a></li>	
+						<li><a href="{{ url('/validado/albumes/admin-informes') }}">Informes Administrador</a></li>
 					@else
-						<li><a href="{{ url('/validado/informes') }}">Mis Simulacros</a></li>
-						<li><a href="{{ url('/validado/albumes') }}">Mis Informes</a></li>
+						<li><a href="{{ url('/') }}">Inicio</a></li>
+						<li><a href="{{ url('/validado/albumes') }}">Informes Colegio</a></li>
+						<li><a href="{{ url('/validado/informes') }}">Simulacros Estudiantes</a></li>
 					@endif
 				</ul>
 

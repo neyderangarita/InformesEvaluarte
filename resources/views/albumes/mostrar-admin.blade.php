@@ -4,7 +4,13 @@
 
 @if(Session::has('creado'))
 	<div class="alert alert-success">
-		<p>El informe ha sido creado</p>
+		<p>El álbum ha sido creado</p>
+	</div>
+@endif
+
+@if(Session::has('actualizado'))
+	<div class="alert alert-success">
+		<p>El álbum ha sido actualizado</p>
 	</div>
 @endif
 
@@ -23,7 +29,10 @@
 					<div class="caption">
 						<h3>{{$album->nombre}}</h3>
 						<p>{{$album->descripcion}}</p>
-						<p><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></p>
+						<p><a href="/validado/albumes/actualizar-album/{{$album->id}}" class="btn btn-primary" role="button">Editar informe</a></p>
+
+						<p><a href="/validado/fotos/admin-archivos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></p>
+
 					</div>
 				</div>
 			</div>
