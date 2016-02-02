@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use GestorImagenes\Informe;
-
+use Khill\Lavacharts\Lavacharts;
 
 class InformeController extends Controller {
 
@@ -15,7 +15,42 @@ class InformeController extends Controller {
 	{
 		$usuario = Auth::user();
 		$informes = $usuario->informes;
-		return view('informes.mostrar', ['informes' => $informes]);
+		
+		$lava = new Lavacharts; // See note below for Laravel
+		$votes  = $lava->DataTable();
+		$votes->addStringColumn('Food Poll');
+		$votes->addNumberColumn('Total');
+
+		for ($i=0; $i < sizeof($informes); $i++) { 
+			$simu = 'Simulacro '. ($i+1) ; 
+			$votes->addRow([$simu,  $informes[$i]->proTotal]);
+		}  
+
+		$lava->BarChart('Simulacros', $votes,
+		[
+    		'title' => 'Simulacros Presentados',
+    		'forceIFrame'         => false,
+    		'barGroupWidth'       =>  50, //As a percent, "33%"
+    		'orientation'         => 'vertical',
+    		'dataOpacity'         => 0.7, 
+			'titleTextStyle' => 
+					[
+			        'color'    => '#6f6ae1',
+			        'fontSize' => 25,
+			    	],
+			'hAxes' =>  [
+			   	[
+				    'title' =>  'Resultado',
+				    'textStyle' => [
+				    	'color'    => '#000000',  // color de los valores horizontales
+				    ]
+			  	],
+			],
+			'width' => 850,
+     	]
+		);
+
+		return view('informes.mostrar', ['informes' => $informes, 'lava' => $lava]);
 	}
 
 	public function getGenerarInforme($id)

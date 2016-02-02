@@ -1,9 +1,15 @@
 @extends('app')
 
 @section('content')
-
 <div class="container-fluid">
+	
+
 @if(sizeof($informes) > 0)	
+
+<div id="poll_div"></div>
+<?= $lava->render('BarChart', 'Simulacros', 'poll_div') ?>
+<br>
+
 	@foreach($informes as $index => $informe)
 		@if($index%3 == 0)
 		<div class="row">
@@ -14,7 +20,7 @@
 						<H3>Simularcro {{ $index+1 }}</H3>
 						<p>Fecha aplicacíon: {{ $informe->FechaAplico }}</p>
 						<p>Puntaje Total: {{ $informe->proTotal }}</p>
-						<p><a href="/validado/informes/generar-informe/{{$informe->codigo_simulacro}}" class="btn btn-primary" role="button">Ver Simulacro</a></p>
+						<p><a href="/validado/informes/generar-informe/{{$informe->codigo_simulacro}}" class="btn btn-primary" role="button">Ver Simulacro</a></p>					
 					</div>
 				</div>
 			</div>

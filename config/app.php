@@ -136,6 +136,8 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Barryvdh\DomPDF\ServiceProvider',
+		"Khill\Lavacharts\Laravel\LavachartsServiceProvider"
+		
 		/*
 		 * Application Service Providers...
 		 */
