@@ -10,6 +10,11 @@
             <div style="position: absolute;top: 125px;left: 0;width: 27%;">
                 <span>{{ $informar->codigo }}<span>&nbsp;</span>
             </div>
+
+           <div style="position: absolute;top: 165px;left: 0;width: 27%;">
+                <span>{{ $informar->puesto }}<span>&nbsp;</span>
+            </div>
+
             <div style="position: absolute;top: 125px;left: 0;width: 92%;">
                 <span>{{ $informar->NombreEstudiante }}<span>&nbsp;</span>
             </div>

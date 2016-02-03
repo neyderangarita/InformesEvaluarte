@@ -69,6 +69,7 @@ class CrearTablaInformes extends Migration {
 			$table->string('simulacro', 50);
 			$table->integer('codigo');
 			$table->foreign('codigo')->references('id')->on('usuarios');
+			$table->integer('puesto');
 			$table->timestamps();
 		});
 	}	
