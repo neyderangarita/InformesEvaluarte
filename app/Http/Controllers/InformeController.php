@@ -59,7 +59,8 @@ class InformeController extends Controller {
         $view =  \View::make('informes.generar-informe', compact( 'informar'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        return $pdf->stream('simulacro_saber.pdf');
+        //return $pdf->stream('simulacro_saber.pdf');
+        return $pdf->download('simulacro_saber.pdf');
 	}
 
 	public function missingMethod($parameters = array())
