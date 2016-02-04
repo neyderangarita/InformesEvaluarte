@@ -53,7 +53,7 @@ class FotoController extends Controller {
 				'album_id' => $id
 			]
 		);
-		return redirect("/validado/fotos?id=$id")->with('creada', 'La foto ha sido subida');
+		return redirect("/validado/fotos/admin-archivos?id=$id")->with('creada', 'La foto ha sido subida');
 	}
 
 	public function getActualizarFoto($id)
