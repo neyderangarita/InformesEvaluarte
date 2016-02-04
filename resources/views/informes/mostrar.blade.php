@@ -19,8 +19,9 @@
 					<div class="caption">		
 						<H3>Simularcro {{ $index+1 }}</H3>
 						<p>Fecha aplicacíon: {{ $informe->FechaAplico }}</p>
-						<p>Puntaje Total: {{ $informe->proTotal }}</p>
-						<p><a href="/validado/informes/generar-informe/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>					
+						<p>Puntaje Total: {{ round(($informe->proMat4 * 3) * (5/13)) + round(($informe->proMat1 * 3) * (5/13)) + round(($informe->proMat5 * 3) * (5/13)) + round(($informe->proMat2* 3) * (5/13)) + round($informe->proMat3 * (5/13)) }}
+						</p>
+						<p><a href="/validado/informes/generar-informe/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>					
 					</div>
 				</div>
 			</div>

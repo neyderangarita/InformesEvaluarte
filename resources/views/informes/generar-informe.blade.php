@@ -44,7 +44,9 @@
                 <span>{{ $informar->proMat3 }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 575px;left: 0;width: 48%;">
-                <span>{{ $informar->proTotal }}<span>&nbsp;</span>
+                <span>
+                    {{ round(($informar->proMat4 * 3) * (5/13)) + round(($informar->proMat1 * 3) * (5/13)) + round(($informar->proMat5 * 3) * (5/13)) + round(($informar->proMat2* 3) * (5/13)) + round($informar->proMat3 * (5/13)) }}
+                <span>&nbsp;</span>
             </div>
             <!-- DATOS SUB AREA -->
             <div style="position: absolute;top: 345px;left: 0;width: 78%;">

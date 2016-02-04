@@ -27,8 +27,8 @@ class InformeController extends Controller {
 
 		for ($i=0; $i < sizeof($informes); $i++) { 
 			$simu = 'Simulacro '. ($i+1) ; 
-			$materias->addRow([$simu,  ($informes[$i]->proMat4 * 3) / 4, $informes[$i]->proMat1, $informes[$i]->proMat5, $informes[$i]->proMat2, $informes[$i]->proMat3 ]);
-		}  
+			$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->proMat3 * (5/13))]);
+		}
 
 		$lava->ColumnChart('Simulacros', $materias, [
 		    'title' => 'Simulacros Presentados',
@@ -39,18 +39,15 @@ class InformeController extends Controller {
 		    'width' => 1200,
 
 		]);
-
 		/*
 		//Grafica en barras 
 		$votes  = $lava->DataTable();
 		$votes->addStringColumn('Food Poll');
 		$votes->addNumberColumn('Total');
-
 		for ($i=0; $i < sizeof($informes); $i++) { 
 			$simu = 'Simulacro '. ($i+1) ; 
 			$votes->addRow([$simu,  $informes[$i]->proTotal]);
 		}  
-
 		$lava->BarChart('Simulacros', $votes,
 		[
     		'title' => 'Simulacros Presentados',
@@ -78,9 +75,9 @@ class InformeController extends Controller {
 		return view('informes.mostrar', ['informes' => $informes, 'lava' => $lava]);
 	}
 
-	public function getGenerarInforme($id)
+	public function getGenerarInforme($id, $idSimulacro)
 	{
-		$informar = Informe::where('codigo_simulacro', $id)->first();
+		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
         $view =  \View::make('informes.generar-informe', compact( 'informar'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
