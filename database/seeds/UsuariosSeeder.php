@@ -10,7 +10,8 @@ use GestorImagenes\Usuario;
 class UsuariosSeeder extends Seeder {
 
 	public function run()
-	{		
+	{	
+		//crear administrador
 		for ($i=0; $i < 1; $i++) 
 		{ 
 			Usuario::create(
@@ -24,7 +25,21 @@ class UsuariosSeeder extends Seeder {
 				'tipo' => "evaluarte"
 			]);
 		}
-
+		//crear colegios
+		for ($i=1; $i < 6; $i++) 
+		{ 
+			Usuario::create(
+			[
+				'id' => "600$i",
+				'nombre' => "COLEGIO",
+				'email' => "C600$i",
+				'password' => bcrypt("C600$i"),
+				'pregunta' => "preg$i", 
+				'respuesta' => "resp$i",
+				'tipo' => "colegio"
+			]);
+		}
+		//crear estudiantes
 		for ($x=1; $x < 10; $x++) 
 		{ 
 			for ($i=0; $i < 41; $i++) 

@@ -15,8 +15,33 @@ class InformeController extends Controller {
 	{
 		$usuario = Auth::user();
 		$informes = $usuario->informes;
-		
 		$lava = new Lavacharts; // See note below for Laravel
+		$materias = $lava->DataTable();
+		$materias->addStringColumn('Simulacros');
+		$materias->addNumberColumn('Lectura Crítica');
+		$materias->addNumberColumn('Matematicas');
+		$materias->addNumberColumn('Sociales y Ciudadanas');
+		$materias->addNumberColumn('Ciencias Naturales');
+		$materias->addNumberColumn('Ingles');
+		$materias->setDateTimeFormat('Y');
+
+		for ($i=0; $i < sizeof($informes); $i++) { 
+			$simu = 'Simulacro '. ($i+1) ; 
+			$materias->addRow([$simu,  ($informes[$i]->proMat4 * 3) / 4, $informes[$i]->proMat1, $informes[$i]->proMat5, $informes[$i]->proMat2, $informes[$i]->proMat3 ]);
+		}  
+
+		$lava->ColumnChart('Simulacros', $materias, [
+		    'title' => 'Simulacros Presentados',
+		    'titleTextStyle' => [
+			        'color'    => '#6f6ae1',
+			        'fontSize' => 25,
+		    ],
+		    'width' => 1200,
+
+		]);
+
+		/*
+		//Grafica en barras 
 		$votes  = $lava->DataTable();
 		$votes->addStringColumn('Food Poll');
 		$votes->addNumberColumn('Total');
@@ -49,7 +74,7 @@ class InformeController extends Controller {
 			'width' => 850,
      	]
 		);
-
+		*/
 		return view('informes.mostrar', ['informes' => $informes, 'lava' => $lava]);
 	}
 
@@ -59,7 +84,6 @@ class InformeController extends Controller {
         $view =  \View::make('informes.generar-informe', compact( 'informar'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        //return $pdf->stream('simulacro_saber.pdf');
         return $pdf->download('simulacro_saber.pdf');
 	}
 

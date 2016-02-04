@@ -6,8 +6,8 @@
 
 @if(sizeof($informes) > 0)	
 
-<div id="poll_div"></div>
-<?= $lava->render('BarChart', 'Simulacros', 'poll_div') ?>
+<div id="perf_div"></div>
+<?= $lava->render('ColumnChart', 'Simulacros', 'perf_div') ?>
 <br>
 
 	@foreach($informes as $index => $informe)
