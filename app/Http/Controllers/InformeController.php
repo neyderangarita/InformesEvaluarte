@@ -16,6 +16,7 @@ class InformeController extends Controller {
 		$usuario = Auth::user();
 		$informes = $usuario->informes;
 		$lava = new Lavacharts; // See note below for Laravel
+
 		$materias = $lava->DataTable();
 		$materias->addStringColumn('Simulacros');
 		$materias->addNumberColumn('Lectura Crítica');
@@ -31,30 +32,38 @@ class InformeController extends Controller {
 		}
 
 		$lava->ColumnChart('Simulacros', $materias, [
-		    'title' => 'Simulacros Presentados',
+		    'title' => 'PUNTAJE GLOBAL',
 		    'titleTextStyle' => [
 			        'color'    => '#6f6ae1',
 			        'fontSize' => 25,
 		    ],
-		    'width' => 1200,
+		    'width' => 650,
+		    'height' => 500,
+		    'isStacked'           => true,
 
 		]);
+
 		/*
 		//Grafica en barras 
-		$votes  = $lava->DataTable();
-		$votes->addStringColumn('Food Poll');
-		$votes->addNumberColumn('Total');
+		$materias  = $lava->DataTable();
+		$materias->addStringColumn('Simulacros');
+		$materias->addNumberColumn('Lectura Crítica');
+		$materias->addNumberColumn('Matematicas');
+		$materias->addNumberColumn('Sociales y Ciudadanas');
+		$materias->addNumberColumn('Ciencias Naturales');
+		$materias->addNumberColumn('Ingles');
+
 		for ($i=0; $i < sizeof($informes); $i++) { 
 			$simu = 'Simulacro '. ($i+1) ; 
-			$votes->addRow([$simu,  $informes[$i]->proTotal]);
+			$materias->addRow([$simu,  round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->proMat3 * (5/13))]);
 		}  
-		$lava->BarChart('Simulacros', $votes,
+		$lava->BarChart('Simulacros', $materias,
 		[
-    		'title' => 'Simulacros Presentados',
+    		'title' => 'PUNTAJE GLOBAL',
     		'forceIFrame'         => false,
     		'barGroupWidth'       =>  50, //As a percent, "33%"
     		'orientation'         => 'vertical',
-    		'dataOpacity'         => 0.7, 
+    		//'dataOpacity'         => 0.7, 
 			'titleTextStyle' => 
 					[
 			        'color'    => '#6f6ae1',
@@ -62,16 +71,18 @@ class InformeController extends Controller {
 			    	],
 			'hAxes' =>  [
 			   	[
-				    'title' =>  'Resultado',
+				    'title' =>  ' ',
 				    'textStyle' => [
 				    	'color'    => '#000000',  // color de los valores horizontales
 				    ]
 			  	],
 			],
 			'width' => 850,
+			//'isStacked'           => true,
      	]
 		);
 		*/
+		
 		return view('informes.mostrar', ['informes' => $informes, 'lava' => $lava]);
 	}
 
