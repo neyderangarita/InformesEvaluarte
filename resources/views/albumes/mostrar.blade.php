@@ -9,6 +9,11 @@
 @endif
 
 <div class="container-fluid">
+	<div class="row">
+	  <div class="col-sm-12" style="text-align: center">
+		<img src="../imagenes/colegio.jpg"  width="40%" height="40%" />
+	  </div>
+	</div>
 @if(Auth::user()->tipo === 'evaluarte')
 <p><a href="/validado/albumes/crear-album" class="btn btn-primary" role="button">Crear informe</a></p>
 @endif

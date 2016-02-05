@@ -5,11 +5,17 @@
 	
 
 @if(sizeof($informes) > 0)	
-
-<div id="perf_div"></div>
-<?= $lava->render('ColumnChart', 'Simulacros', 'perf_div') ?>
+<div class="container-fluid">
+	<div class="row">
+	  <div class="col-sm-6" id="perf_div">
+			<?= $lava->render('ColumnChart', 'Simulacros', 'perf_div') ?>
+	  </div>
+	  <div class="col-sm-6" style="text-align: center">
+		<img src="../imagenes/individual.jpg"  width="20%" height="20%" />
+	  </div>
+	</div>
+</div>
 <br>
-
 	@foreach($informes as $index => $informe)
 		@if($index%3 == 0)
 		<div class="row">
@@ -29,6 +35,10 @@
 		</div>
 		@endif
 	@endforeach
+
+
+
+
 @else
 <div class="alert alert-danger">
 	<p>Al parecer no tienes simulacros</p>
