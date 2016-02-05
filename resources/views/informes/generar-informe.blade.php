@@ -24,7 +24,7 @@
             <div style="position: absolute;top: 165px;left: 0;width: 86%;">
                 <span>{{ $informar->colegio }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 165px;left: 0;width: 190%;">
+            <div style="position: absolute;top: 178px;left: 0;width: 182%;">
                 <span>{{ $informar->ciudad }}<span>&nbsp;</span>
             </div>
             <!-- Datos PUNTAJE materias -->
