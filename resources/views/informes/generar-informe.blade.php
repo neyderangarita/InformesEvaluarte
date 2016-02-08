@@ -70,14 +70,39 @@
             <div style="position: absolute;top: 273px;left: 0;width: 153%;">
                 <span>{{ $informar->Mat4Competencia3 }}<span>&nbsp;</span>
             </div>
+
             <div style="position: absolute;top: 303px;left: 0;width: 128%;">
-                <span>{{ $informar->Competencia1Mat4 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat4Competencia1) >=0 && str_replace( ',', '.',$informar->Mat4Competencia1) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat4Competencia1) > 3 && str_replace( ',', '.',$informar->Mat4Competencia1) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat4Competencia1) > 7 && str_replace( ',', '.',$informar->Mat4Competencia1) <= 10)
+                        III
+                    @endif 
+                    <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 303px;left: 0;width: 140%;">
-                <span>{{ $informar->Competencia2Mat4 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat4Competencia2) >=0 && str_replace( ',', '.',$informar->Mat4Competencia2) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat4Competencia2) > 3 && str_replace( ',', '.',$informar->Mat4Competencia2) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat4Competencia2) > 7 && str_replace( ',', '.',$informar->Mat4Competencia2) <= 10)
+                        III
+                    @endif 
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 303px;left: 0;width: 153%;">
-                <span>{{ $informar->Competencia3Mat4 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat4Competencia3) >=0 && str_replace( ',', '.',$informar->Mat4Competencia3) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat4Competencia3) > 3 && str_replace( ',', '.',$informar->Mat4Competencia3) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat4Competencia3) > 7 && str_replace( ',', '.',$informar->Mat4Competencia3) <= 10)
+                        III
+                    @endif 
+                <span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 333px;left: 0;width: 128%;">
@@ -89,14 +114,39 @@
             <div style="position: absolute;top: 333px;left: 0;width: 153%;">
                 <span>{{ $informar->Mat1Competencia3 }}<span>&nbsp;</span>
             </div>
+
             <div style="position: absolute;top: 361px;left: 0;width: 128%;">
-                <span>{{ $informar->Competencia1Mat1 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat1Competencia1) >=0 && str_replace( ',', '.',$informar->Mat1Competencia1) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat1Competencia1) > 3 && str_replace( ',', '.',$informar->Mat1Competencia1) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat1Competencia1) > 7 && str_replace( ',', '.',$informar->Mat1Competencia1) <= 10)
+                        III
+                    @endif 
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 361px;left: 0;width: 140%;">
-                <span>{{ $informar->Competencia2Mat1 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat1Competencia2) >=0 && str_replace( ',', '.',$informar->Mat1Competencia2) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat1Competencia2) > 3 && str_replace( ',', '.',$informar->Mat1Competencia2) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat1Competencia2) > 7 && str_replace( ',', '.',$informar->Mat1Competencia2) <= 10)
+                        III
+                    @endif 
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 361px;left: 0;width: 153%;">
-                <span>{{ $informar->Competencia3Mat1 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat1Competencia3) >=0 && str_replace( ',', '.',$informar->Mat1Competencia3) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat1Competencia3) > 3 && str_replace( ',', '.',$informar->Mat1Competencia3) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat1Competencia3) > 7 && str_replace( ',', '.',$informar->Mat1Competencia3) <= 10)
+                        III
+                    @endif 
+                <span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 391px;left: 0;width: 128%;">
@@ -108,14 +158,39 @@
             <div style="position: absolute;top: 391px;left: 0;width: 153%;">
                 <span>{{ $informar->Mat5Competencia3 }}<span>&nbsp;</span>
             </div>
+
             <div style="position: absolute;top: 420px;left: 0;width: 128%;">
-                <span>{{ $informar->Competencia1Mat5 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat5Competencia1) >=0 && str_replace( ',', '.',$informar->Mat5Competencia1) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat5Competencia1) > 3 && str_replace( ',', '.',$informar->Mat5Competencia1) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat5Competencia1) > 7 && str_replace( ',', '.',$informar->Mat5Competencia1) <= 10)
+                        III
+                    @endif
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 420px;left: 0;width: 140%;">
-                <span>{{ $informar->Competencia2Mat5 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat5Competencia2) >=0 && str_replace( ',', '.',$informar->Mat5Competencia2) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat5Competencia2) > 3 && str_replace( ',', '.',$informar->Mat5Competencia2) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat5Competencia2) > 7 && str_replace( ',', '.',$informar->Mat5Competencia2) <= 10)
+                        III
+                    @endif
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 420px;left: 0;width: 153%;">
-                <span>{{ $informar->Competencia3Mat5 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat5Competencia3) >=0 && str_replace( ',', '.',$informar->Mat5Competencia3) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat5Competencia3) > 3 && str_replace( ',', '.',$informar->Mat5Competencia3) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat5Competencia3) > 7 && str_replace( ',', '.',$informar->Mat5Competencia3) <= 10)
+                        III
+                    @endif
+                <span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 451px;left: 0;width: 128%;">
@@ -128,15 +203,38 @@
                 <span>{{ $informar->Mat2Competencia3 }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 479px;left: 0;width: 128%;">
-                <span>{{ $informar->Competencia1Mat2 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat2Competencia1) >=0 && str_replace( ',', '.',$informar->Mat2Competencia1) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat2Competencia1) > 3 && str_replace( ',', '.',$informar->Mat2Competencia1) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat2Competencia1) > 7 && str_replace( ',', '.',$informar->Mat2Competencia1) <= 10)
+                        III
+                    @endif
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 479px;left: 0;width: 140%;">
-                <span>{{ $informar->Competencia2Mat2 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat2Competencia2) >=0 && str_replace( ',', '.',$informar->Mat2Competencia2) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat2Competencia2) > 3 && str_replace( ',', '.',$informar->Mat2Competencia2) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat2Competencia2) > 7 && str_replace( ',', '.',$informar->Mat2Competencia2) <= 10)
+                        III
+                    @endif
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 479px;left: 0;width: 153%;">
-                <span>{{ $informar->Competencia3Mat2 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat2Competencia3) >=0 && str_replace( ',', '.',$informar->Mat2Competencia3) <= 3)
+                        I 
+                    @elseif(str_replace( ',', '.',$informar->Mat2Competencia3) > 3 && str_replace( ',', '.',$informar->Mat2Competencia3) <= 7)
+                        II 
+                     @elseif(str_replace( ',', '.',$informar->Mat2Competencia3) > 7 && str_replace( ',', '.',$informar->Mat2Competencia3) <= 10)
+                        III
+                    @endif
+                <span>&nbsp;</span>
             </div>
-            
             <!-- DATOS COMPONENTES -->
             <div style="position: absolute;top: 333px;left: 0;width: 167%;">
                 <span>{{ $informar->Mat1Componentes1 }}<span>&nbsp;</span>
@@ -148,13 +246,50 @@
                 <span>{{ $informar->Mat1Componentes3 }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 361px;left: 0;width: 167%;">
-                <span>{{ $informar->Componentes1Mat1 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat1Componentes1) >=0 && str_replace( ',', '.',$informar->Mat1Componentes1) <= 2)
+                        SB 
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes1) > 2 && str_replace( ',', '.',$informar->Mat1Componentes1) <= 4)
+                        B
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes1) > 4 && str_replace( ',', '.',$informar->Mat1Componentes1) <= 6)
+                        M
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes1) > 6 && str_replace( ',', '.',$informar->Mat1Componentes1) <= 8)
+                        A 
+                     @elseif(str_replace( ',', '.',$informar->Mat1Componentes1) > 8 && str_replace( ',', '.',$informar->Mat1Componentes1) <= 10)
+                        SA
+                    @endif
+                <span>&nbsp;</span>
             </div>
+
             <div style="position: absolute;top: 361px;left: 0;width: 175%;">
-                <span>{{ $informar->Componentes2Mat1 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat1Componentes2) >=0 && str_replace( ',', '.',$informar->Mat1Componentes2) <= 2)
+                        SB 
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes2) > 2 && str_replace( ',', '.',$informar->Mat1Componentes2) <= 4)
+                        B
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes2) > 4 && str_replace( ',', '.',$informar->Mat1Componentes2) <= 6)
+                        M
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes2) > 6 && str_replace( ',', '.',$informar->Mat1Componentes2) <= 8)
+                        A 
+                     @elseif(str_replace( ',', '.',$informar->Mat1Componentes2) > 8 && str_replace( ',', '.',$informar->Mat1Componentes2) <= 10)
+                        SA
+                    @endif
+                <span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 361px;left: 0;width: 184%;">
-                <span>{{ $informar->Componentes3Mat1 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat1Componentes3) >=0 && str_replace( ',', '.',$informar->Mat1Componentes3) <= 2)
+                        SB 
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes3) > 2 && str_replace( ',', '.',$informar->Mat1Componentes3) <= 4)
+                        B
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes3) > 4 && str_replace( ',', '.',$informar->Mat1Componentes3) <= 6)
+                        M
+                    @elseif(str_replace( ',', '.',$informar->Mat1Componentes3) > 6 && str_replace( ',', '.',$informar->Mat1Componentes3) <= 8)
+                        A 
+                     @elseif(str_replace( ',', '.',$informar->Mat1Componentes3) > 8 && str_replace( ',', '.',$informar->Mat1Componentes3) <= 10)
+                        SA
+                    @endif
+                <span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 451px;left: 0;width: 167%;">
@@ -166,20 +301,70 @@
             <div style="position: absolute;top: 451px;left: 0;width: 184%;">
                 <span>{{ $informar->Mat2Componentes3 }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 479px;left: 0;width: 167%;">
-                <span>{{ $informar->Componentes1Mat2 }}<span>&nbsp;</span>
-            </div>
-            <div style="position: absolute;top: 479px;left: 0;width: 175%;">
-                <span>{{ $informar->Componentes2Mat2 }}<span>&nbsp;</span>
-            </div>
-            <div style="position: absolute;top: 479px;left: 0;width: 184%;">
-                <span>{{ $informar->Componentes3Mat2 }}<span>&nbsp;</span>
-            </div>
             <div style="position: absolute;top: 451px;left: 0;width: 192%;">
                 <span>{{ $informar->Mat2Componentes4 }}<span>&nbsp;</span>
             </div>
+
+
+            <div style="position: absolute;top: 479px;left: 0;width: 167%;">
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat2Componentes1) >=0 && str_replace( ',', '.',$informar->Mat2Componentes1) <= 2)
+                        SB 
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes1) > 2 && str_replace( ',', '.',$informar->Mat2Componentes1) <= 4)
+                        B
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes1) > 4 && str_replace( ',', '.',$informar->Mat2Componentes1) <= 6)
+                        M
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes1) > 6 && str_replace( ',', '.',$informar->Mat2Componentes1) <= 8)
+                        A 
+                     @elseif(str_replace( ',', '.',$informar->Mat2Componentes1) > 8 && str_replace( ',', '.',$informar->Mat2Componentes1) <= 10)
+                        SA
+                    @endif
+                <span>&nbsp;</span>
+            </div>
+            <div style="position: absolute;top: 479px;left: 0;width: 175%;">
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat2Componentes2) >=0 && str_replace( ',', '.',$informar->Mat2Componentes2) <= 2)
+                        SB 
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes2) > 2 && str_replace( ',', '.',$informar->Mat2Componentes2) <= 4)
+                        B
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes2) > 4 && str_replace( ',', '.',$informar->Mat2Componentes2) <= 6)
+                        M
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes2) > 6 && str_replace( ',', '.',$informar->Mat2Componentes2) <= 8)
+                        A 
+                     @elseif(str_replace( ',', '.',$informar->Mat2Componentes2) > 8 && str_replace( ',', '.',$informar->Mat2Componentes2) <= 10)
+                        SA
+                    @endif
+                <span>&nbsp;</span>
+            </div>
+            <div style="position: absolute;top: 479px;left: 0;width: 184%;">
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat2Componentes3) >=0 && str_replace( ',', '.',$informar->Mat2Componentes3) <= 2)
+                        SB 
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes3) > 2 && str_replace( ',', '.',$informar->Mat2Componentes3) <= 4)
+                        B
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes3) > 4 && str_replace( ',', '.',$informar->Mat2Componentes3) <= 6)
+                        M
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes3) > 6 && str_replace( ',', '.',$informar->Mat2Componentes3) <= 8)
+                        A 
+                     @elseif(str_replace( ',', '.',$informar->Mat2Componentes3) > 8 && str_replace( ',', '.',$informar->Mat2Componentes3) <= 10)
+                        SA
+                    @endif
+                <span>&nbsp;</span>
+            </div>
             <div style="position: absolute;top: 479px;left: 0;width: 192%;">
-                <span>{{ $informar->Componentes4Mat2 }}<span>&nbsp;</span>
+                <span>
+                    @if( str_replace( ',', '.',$informar->Mat2Componentes4) >=0 && str_replace( ',', '.',$informar->Mat2Componentes4) <= 2)
+                        SB 
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes4) > 2 && str_replace( ',', '.',$informar->Mat2Componentes4) <= 4)
+                        B
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes4) > 4 && str_replace( ',', '.',$informar->Mat2Componentes4) <= 6)
+                        M
+                    @elseif(str_replace( ',', '.',$informar->Mat2Componentes4) > 6 && str_replace( ',', '.',$informar->Mat2Componentes4) <= 8)
+                        A 
+                     @elseif(str_replace( ',', '.',$informar->Mat2Componentes4) > 8 && str_replace( ',', '.',$informar->Mat2Componentes4) <= 10)
+                        SA
+                    @endif
+                <span>&nbsp;</span>
             </div>
 
         </div>  
