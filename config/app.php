@@ -149,7 +149,6 @@ return [
 		
 		'Barryvdh\DomPDF\ServiceProvider',
 		'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
-		'Collective\Html\HtmlServiceProvider',
 		
 		/*
 		 * Application Service Providers...
@@ -207,8 +206,6 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'PDF' 		=> 'Barryvdh\DomPDF\Facade',
-		'Form'      => 'Collective\Html\FormFacade', 
-		'Html'      => 'Collective\Html\HtmlFacade',
 
 	],
 
