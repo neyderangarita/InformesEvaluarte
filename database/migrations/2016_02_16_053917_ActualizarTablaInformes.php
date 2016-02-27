@@ -1,8 +1,10 @@
 <?php
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaInformes extends Migration {
+class ActualizarTablaInformes extends Migration {
+
 
 	public function up()
 	{
@@ -54,10 +56,13 @@ class CrearTablaInformes extends Migration {
 			$table->integer('puesto');
 			$table->nullableTimestamps();
 		});
-	}	
+
+	}
+
 
 	public function down()
 	{
-		Schema::drop('informes');
+		Schema::drop('Informes');
 	}
+
 }

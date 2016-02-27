@@ -1,23 +1,18 @@
 <?php namespace GestorImagenes\Http\Controllers\Validacion;
 
 use GestorImagenes\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use GestorImagenes\Http\Requests\IniciarSesionRequest;
 use GestorImagenes\Http\Requests\RecuperarContrasenaRequest;
 use GestorImagenes\Usuario;
+use Validator;
+use Auth;
 
 class ValidacionController extends Controller 
 {
-	protected $auth;
-	protected $registrar;
-
-	public function __construct(Guard $auth, Registrar $registrar)
+	public function __construct()
 	{
-		$this->auth = $auth;
-		$this->registrar = $registrar;
 		$this->middleware('guest', ['except' => 'getSalida']);
 	}
 
@@ -28,7 +23,7 @@ class ValidacionController extends Controller
 
 	public function postRegistro(Request $request)
 	{
-		$validator = $this->registrar->validator($request->all());
+		$validator = $this->validator($request->all());
 		if ($validator->fails())
 		{
 			$this->throwValidationException(
@@ -36,7 +31,7 @@ class ValidacionController extends Controller
 			);
 		}
 
-		$this->auth->login($this->registrar->create($request->all()));
+		Auth::login($this->create($request->all()));
 		return redirect($this->redirectPath());
 	}
 
@@ -49,7 +44,7 @@ class ValidacionController extends Controller
 	{
 		$credentials = $request->only('email', 'password');
 
-		if ($this->auth->attempt($credentials, $request->has('remember')))
+		if (Auth::attempt($credentials, $request->has('remember')))
 		{
 			return redirect()->intended($this->redirectPath());
 		}
@@ -67,7 +62,7 @@ class ValidacionController extends Controller
 
 	public function getSalida()
 	{
-		$this->auth->logout();
+		Auth::logout();
 		return redirect('/');
 	}
 
@@ -113,5 +108,27 @@ class ValidacionController extends Controller
 	public function missingMethod($parameters = array())
 	{
 		abort(404);
+	}
+
+	public function validator(array $data)
+	{
+		return Validator::make($data, [
+			'nombre' => 'required|max:255',
+			'email' => 'required|max:255|unique:usuarios',
+			'password' => 'required|confirmed|min:6',
+			'pregunta' => 'required|max:255',
+			'respuesta' => 'required|max:255',
+		]);
+	}
+
+	public function create(array $data)
+	{
+		return Usuario::create([
+			'nombre' => $data['nombre'],
+			'email' => $data['email'],
+			'password' => bcrypt($data['password']),
+			'pregunta' => $data['pregunta'],
+			'respuesta' => $data['respuesta']
+		]);
 	}
 }

@@ -2,6 +2,18 @@
 
 return [
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "environment" your application is currently
+    | running in. This may determine how you prefer to configure various
+    | services your application utilizes. Set this in your ".env" file.
+    |
+    */
+    'env' => env('APP_ENV', 'production'),
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
@@ -13,7 +25,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG'),
+	'debug' => env('APP_DEBUG', false),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -26,7 +38,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => env('APP_URL', 'http://localhost'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -118,7 +130,6 @@ return [
 		'Illuminate\Bus\BusServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
-		'Illuminate\Routing\ControllerServiceProvider',
 		'Illuminate\Cookie\CookieServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
 		'Illuminate\Encryption\EncryptionServiceProvider',
@@ -135,14 +146,15 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+		
 		'Barryvdh\DomPDF\ServiceProvider',
-		"Khill\Lavacharts\Laravel\LavachartsServiceProvider",
+		'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
+		'Collective\Html\HtmlServiceProvider',
 		
 		/*
 		 * Application Service Providers...
 		 */
 		'GestorImagenes\Providers\AppServiceProvider',
-		'GestorImagenes\Providers\BusServiceProvider',
 		'GestorImagenes\Providers\ConfigServiceProvider',
 		'GestorImagenes\Providers\EventServiceProvider',
 		'GestorImagenes\Providers\RouteServiceProvider',
@@ -195,6 +207,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'PDF' 		=> 'Barryvdh\DomPDF\Facade',
+		'Form'      => 'Collective\Html\FormFacade', 
+		'Html'      => 'Collective\Html\HtmlFacade',
 
 	],
 
