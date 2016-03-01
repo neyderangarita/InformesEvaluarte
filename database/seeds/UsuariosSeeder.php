@@ -386,5 +386,6 @@ class UsuariosSeeder extends Seeder {
 			}
 		}
 
+
 	}
 }
