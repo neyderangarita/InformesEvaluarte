@@ -32,7 +32,7 @@
 				Simulacros Evaluarte (PDF)
 				</a> -->
 
-				<a href="http://gestorevaluarte.com">
+				<a href="/">
 					<img class="custom_logo ie_png" alt="Simulacros Evaluarte (PDF)" src="/imagenes/evaluarte-logo.png">
 				</a>
 				

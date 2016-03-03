@@ -25,10 +25,12 @@ class InformeController extends Controller {
 		$materias->addNumberColumn('Ciencias Naturales');
 		$materias->addNumberColumn('Ingles');
 		$materias->setDateTimeFormat('Y');
+
 		for ($i=0; $i < sizeof($informes); $i++) { 
 			$simu = 'Simulacro '. ($i+1) ; 
 			$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->proMat3 * (5/13))]);
 		}
+
 		$lava->ColumnChart('Simulacros', $materias, [
 		    'title' => 'PUNTAJE GLOBAL',
 		    'titleTextStyle' => [
@@ -55,41 +57,53 @@ class InformeController extends Controller {
 
 	public function getGenerarInformeBarras($id, $idSimulacro)
 	{
-
 		$usuario = Auth::user();
 		$informes = $usuario->informes;
-		$lava = new Lavacharts; // See note below for Laravel
+		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
+        //$pdf = \PDF::loadView('informes.generar-informe-barras', compact('informar'));
+        //return $pdf->download('simulacro_saber_primaria.pdf');
+
+		$lava = new Lavacharts; // See note below for Laravel	
 		$materias = $lava->DataTable();
 		$materias->addStringColumn('Simulacros');
-		$materias->addNumberColumn('Lectura Crítica');
 		$materias->addNumberColumn('Matematicas');
-		$materias->addNumberColumn('Sociales y Ciudadanas');
-		$materias->addNumberColumn('Ciencias Naturales');
-		$materias->addNumberColumn('Ingles');
+		$materias->addNumberColumn('Lectura Crítica');
 		$materias->setDateTimeFormat('Y');
 
 		for ($i=0; $i < sizeof($informes); $i++) { 
-			$simu = 'Simulacro '. ($i+1) ; 
-			$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->proMat3 * (5/13))]);
+			$simu = '.';
+			// '. ($i+1) ; 
+			$materias->addRow([
+				$simu,
+				$informes[$i]->proMat1,
+				$informes[$i]->proMat4
+				]);
 		}
-		/*
-		$yourFirstChart["chart"] = array("type" => "bar", "renderTo" => "container");
-	    $yourFirstChart["title"] = array("text" => "Fruit Consumption");
-	    $yourFirstChart["xAxis"] = array("categories" => ['Apples', 'Bananas', 'Oranges']);
-	    $yourFirstChart["yAxis"] = array("title" => array("text" => "Fruit eaten"));
 
-	    $yourFirstChart["series"] = [
-	        array("name" => "Jane", "data" => [1,0,4]),
-	        array("name" => "John", "data" => [5,7,3])
-	    ];
+		$lava->ColumnChart('Simulacros', $materias, [
+		    'titleTextStyle' => [
+			        'color'    => '#6f6ae1',
+			        'fontSize' => 50,
+		    ],
+		    'legend' => ['position' => 'none'],
+		    'colors' => ['#d52e32', '#d89d3f'],
+		    'datatable' => $materias,
+		    'barGroupWidth'  =>  0,  ///int | 'string'
+		    'width' => 520,
+		    'height' => 330,
+		    'isStacked' => false,
+			'vAxis' => ['format' => 'decimal',
+						'minValue' => 0,
+						'maxValue' => 100,
+						],
+			'hAxis' => ['format' => 'decimal',
+			],
 
-	    , 'yourFirstChart'
-		*/
+		]);  
 
 
-		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
-        $pdf = \PDF::loadView('informes.generar-informe-barras', compact('informar'));
-        return $pdf->download('simulacro_saber_primaria.pdf');
+        return view('informes.generar-informe-barras', ['informar' => $informar, 'lava' => $lava]);
+
 	}
 
 	public function missingMethod($parameters = array())
