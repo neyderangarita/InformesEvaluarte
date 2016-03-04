@@ -27,10 +27,6 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<!--<a class="navbar-brand" href="#">
-				<img src="imagenes/evaluarte-logo.png" style="width:200px"/>
-				Simulacros Evaluarte (PDF)
-				</a> -->
 
 				<a href="/">
 					<img class="custom_logo ie_png" alt="Simulacros Evaluarte (PDF)" src="/imagenes/evaluarte-logo.png">
@@ -76,17 +72,11 @@
 	</nav>
 
 	@yield('content')
-
-	
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-	<!-- Scripts -->
 	<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
 	<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script>
 	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
-
-	
 </body>
 </html>

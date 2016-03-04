@@ -19,17 +19,52 @@ class InformeController extends Controller {
 		$lava = new Lavacharts; // See note below for Laravel	
 		$materias = $lava->DataTable();
 		$materias->addStringColumn('Simulacros');
-		$materias->addNumberColumn('Lectura Crítica');
-		$materias->addNumberColumn('Matematicas');
-		$materias->addNumberColumn('Sociales y Ciudadanas');
-		$materias->addNumberColumn('Ciencias Naturales');
-		$materias->addNumberColumn('Ingles');
-		$materias->setDateTimeFormat('Y');
 
-		for ($i=0; $i < sizeof($informes); $i++) { 
-			$simu = 'Simulacro '. ($i+1) ; 
-			$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->proMat3 * (5/13))]);
+
+		if($informes[0]->grado == '10°' || $informes[0]->grado == '11°')
+		{
+			$materias->addNumberColumn('Lectura Crítica');
+			$materias->addNumberColumn('Matematicas');
+			$materias->addNumberColumn('Sociales y Ciudadanas');
+			$materias->addNumberColumn('Ciencias Naturales');
+			$materias->addNumberColumn('Ingles');
+			$materias->setDateTimeFormat('Y');
+		
+			for ($i=0; $i < sizeof($informes); $i++) { 
+				$simu = 'Simulacro '. ($i+1) ; 
+				$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->proMat3 * (5/13))]);
+			}
 		}
+		elseif($informes[0]->grado == '3°' || $informes[0]->grado == '4°')
+		{
+			$materias->addNumberColumn('Lectura Crítica');
+			$materias->addNumberColumn('Matematicas');
+			$materias->setDateTimeFormat('Y');
+		
+			for ($i=0; $i < sizeof($informes); $i++) { 
+				$simu = 'Simulacro '. ($i+1) ; 
+				$materias->addRow([
+					$simu, 
+					round(($informes[$i]->proMat4 * 3) * (2/13)), 
+					round(($informes[$i]->proMat1 * 3) * (2/13))  
+				]);
+			} 
+		}
+		elseif($informes[0]->grado == '5°' || $informes[0]->grado == '6°' || $informes[0]->grado == '7°' || $informes[0]->grado == '8°' || $informes[0]->grado == '9°')
+		{
+			$materias->addNumberColumn('Lectura Crítica');
+			$materias->addNumberColumn('Matematicas');
+			$materias->addNumberColumn('Competencias ciudadanas');
+			$materias->addNumberColumn('Ciencias Naturales');
+			$materias->addNumberColumn('Edu. Economica y financiera');
+			$materias->setDateTimeFormat('Y');
+		
+			for ($i=0; $i < sizeof($informes); $i++) { 
+				$simu = 'Simulacro '. ($i+1) ; 
+				$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->competencias_ciudadanas * (5/13))]);
+			}
+		}
+
 
 		$lava->ColumnChart('Simulacros', $materias, [
 		    'title' => 'PUNTAJE GLOBAL',
@@ -40,29 +75,25 @@ class InformeController extends Controller {
 		    'width' => 650,
 		    'height' => 500,
 		    'isStacked'           => true,
-
 		]);  
 
 		return view('informes.mostrar', ['informes' => $informes, 'lava' => $lava]);
 	}
 
-	public function getGenerarInforme($id, $idSimulacro)
+	public function getGenerarMediaVocacional($id, $idSimulacro)
 	{
 		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
-        $view =  \View::make('informes.generar-informe', compact( 'informar'))->render();
+        $view =  \View::make('informes.generar-media-vocacional', compact( 'informar'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->download('simulacro_saber.pdf');
 	}
 
-	public function getGenerarInformeBarras($id, $idSimulacro)
+	public function getGenerarBasicaPrimaria($id, $idSimulacro)
 	{
 		$usuario = Auth::user();
 		$informes = $usuario->informes;
 		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
-        //$pdf = \PDF::loadView('informes.generar-informe-barras', compact('informar'));
-        //return $pdf->download('simulacro_saber_primaria.pdf');
-
 		$lava = new Lavacharts; // See note below for Laravel	
 		$materias = $lava->DataTable();
 		$materias->addStringColumn('Simulacros');
@@ -72,7 +103,6 @@ class InformeController extends Controller {
 
 		for ($i=0; $i < sizeof($informes); $i++) { 
 			$simu = '.';
-			// '. ($i+1) ; 
 			$materias->addRow([
 				$simu,
 				$informes[$i]->proMat1,
@@ -98,12 +128,57 @@ class InformeController extends Controller {
 						],
 			'hAxis' => ['format' => 'decimal',
 			],
-
 		]);  
+        return view('informes.generar-basica-primaria', ['informar' => $informar, 'lava' => $lava]);
+	}
 
+	public function getGenerarBasicaSecundaria($id, $idSimulacro)
+	{
+		$usuario = Auth::user();
+		$informes = $usuario->informes;
+		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
+		$lava = new Lavacharts; // See note below for Laravel	
+		$materias = $lava->DataTable();
+		$materias->addStringColumn('Simulacros');
+		$materias->addNumberColumn('Matematicas');
+		$materias->addNumberColumn('Lenguaje');
+		$materias->addNumberColumn('Ciencias Naturales');
+		$materias->addNumberColumn('Competencias ciudadanas');
+		$materias->addNumberColumn('Edu. Economica y financiera');
+		$materias->setDateTimeFormat('Y');
 
-        return view('informes.generar-informe-barras', ['informar' => $informar, 'lava' => $lava]);
+		for ($i=0; $i < sizeof($informes); $i++) { 
+			$simu = '.';
+			$materias->addRow([
+				$simu,
+				$informes[$i]->proMat1,
+				$informes[$i]->proMat4,
+				$informes[$i]->proMat2,
+				$informes[$i]->proMat5,
+				$informes[$i]->competencias_ciudadanas,
+				]);
+		}
 
+		$lava->ColumnChart('Simulacros', $materias, [
+		    'titleTextStyle' => [
+			        'color'    => '#6f6ae1',
+			        'fontSize' => 50,
+		    ],
+		    'legend' => ['position' => 'none'],
+		    'colors' => ['#f1121c', '#eca40d', '#73b92b', '#8010c4', '#7af4eb'],
+		    'datatable' => $materias,
+		    'barGroupWidth'  =>  5,  ///int | 'string'
+		    'width' => 520,
+		    'height' => 330,
+		    'isStacked' => false,
+			'vAxis' => ['format' => 'decimal',
+						'minValue' => 0,
+						'maxValue' => 100,
+						],
+			'hAxis' => ['format' => 'decimal',
+			],
+		]);  
+        return view('informes.generar-basica-secundaria', ['informar' => $informar, 'lava' => $lava]);
 	}
 
 	public function missingMethod($parameters = array())
