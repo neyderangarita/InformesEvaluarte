@@ -45,8 +45,8 @@ class InformeController extends Controller {
 				$simu = 'Simulacro '. ($i+1) ; 
 				$materias->addRow([
 					$simu, 
-					round(($informes[$i]->proMat4 * 3) * (2/13)), 
-					round(($informes[$i]->proMat1 * 3) * (2/13))  
+					$informes[$i]->proMat4, 
+					$informes[$i]->proMat1  
 				]);
 			} 
 		}
@@ -61,10 +61,14 @@ class InformeController extends Controller {
 		
 			for ($i=0; $i < sizeof($informes); $i++) { 
 				$simu = 'Simulacro '. ($i+1) ; 
-				$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->competencias_ciudadanas * (5/13))]);
+				$materias->addRow([$simu, 
+					$informes[$i]->proMat4, 
+					$informes[$i]->proMat1,
+					$informes[$i]->proMat5,
+					$informes[$i]->proMat2,
+					$informes[$i]->competencias_ciudadanas]);
 			}
 		}
-
 
 		$lava->ColumnChart('Simulacros', $materias, [
 		    'title' => 'PUNTAJE GLOBAL',
@@ -92,7 +96,6 @@ class InformeController extends Controller {
 	public function getGenerarBasicaPrimaria($id, $idSimulacro)
 	{
 		$usuario = Auth::user();
-		$informes = $usuario->informes;
 		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
 		$lava = new Lavacharts; // See note below for Laravel	
 		$materias = $lava->DataTable();
@@ -101,12 +104,12 @@ class InformeController extends Controller {
 		$materias->addNumberColumn('Lectura Crítica');
 		$materias->setDateTimeFormat('Y');
 
-		for ($i=0; $i < sizeof($informes); $i++) { 
+		for ($i=0; $i < sizeof($informar); $i++) { 
 			$simu = '.';
 			$materias->addRow([
 				$simu,
-				$informes[$i]->proMat1,
-				$informes[$i]->proMat4
+				$informar->proMat1,
+				$informar->proMat4
 				]);
 		}
 
@@ -135,7 +138,7 @@ class InformeController extends Controller {
 	public function getGenerarBasicaSecundaria($id, $idSimulacro)
 	{
 		$usuario = Auth::user();
-		$informes = $usuario->informes;
+		//$informes = $usuario->informes;
 		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
 		$lava = new Lavacharts; // See note below for Laravel	
 		$materias = $lava->DataTable();
@@ -147,15 +150,15 @@ class InformeController extends Controller {
 		$materias->addNumberColumn('Edu. Economica y financiera');
 		$materias->setDateTimeFormat('Y');
 
-		for ($i=0; $i < sizeof($informes); $i++) { 
+		for ($i=0; $i < sizeof($informar); $i++) { 
 			$simu = '.';
 			$materias->addRow([
 				$simu,
-				$informes[$i]->proMat1,
-				$informes[$i]->proMat4,
-				$informes[$i]->proMat2,
-				$informes[$i]->proMat5,
-				$informes[$i]->competencias_ciudadanas,
+				$informar->proMat1,
+				$informar->proMat4,
+				$informar->proMat2,
+				$informar->proMat5,
+				$informar->competencias_ciudadanas,
 				]);
 		}
 

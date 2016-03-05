@@ -46,27 +46,11 @@ class Informe extends Model
 			,'ciudad'
 			,'FechaAplico'
 			,'NivelIngles'
-			,'Componentes1Mat1'
-			,'Componentes2Mat1'
-			,'Componentes3Mat1'
-			,'Competencia1Mat1'
-			,'Competencia2Mat1'
-			,'Competencia3Mat1'
-			,'Componentes1Mat2'
-			,'Componentes2Mat2'
-			,'Componentes3Mat2'
-			,'Componentes4Mat2'
-			,'Competencia1Mat2'
-			,'Competencia2Mat2'
-			,'Competencia3Mat2'
-			,'Competencia1Mat4'
-			,'Competencia2Mat4'
-			,'Competencia3Mat4'
-			,'Competencia1Mat5'
-			,'Competencia2Mat5'
-			,'Competencia3Mat5'
-			,'simulacro'	
-			,'codigo'];
+			,'simulacro'
+			,'grado'	
+			,'codigo'
+			,'puesto'
+			];
   
 	public function propietario()
 	{

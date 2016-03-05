@@ -7,9 +7,11 @@
     <body>
         <div style="text-align: center; font: 80%; font-family: "Homer Simpson", cursive">
                 <img class="custom_logo ie_png"  style="position: absolute;top: 0px;left: 0px;width: auto;" src="/imagenes/fondo2.jpg">
+                
                 <div style="position: absolute;top: 290px;left: 105px;width: 200%;"  id="perf_div">
                     <?= $lava->render('ColumnChart', 'Simulacros', 'perf_div') ?>
                 </div>
+                
                 <div style="position: absolute;top: 730px;left: 300px;width: 50px;">
                     <span>{{ $informar->proMat1 }}<span>&nbsp;</span>
                 </div>
