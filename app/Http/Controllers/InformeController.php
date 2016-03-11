@@ -81,8 +81,8 @@ class InformeController extends Controller {
 			        'color'    => '#6f6ae1',
 			        'fontSize' => 25,
 		    ],
-		    'width' => 1000,
-		    'height' => 670,
+		    'width' => 650,
+		    'height' => 500,
 		    'isStacked'           => true,
 		]);  
 
