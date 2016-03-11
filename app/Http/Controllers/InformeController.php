@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Auth;
 use GestorImagenes\Informe;
 use Khill\Lavacharts\Lavacharts;
 use GestorImagenes\Http\Controllers\PDF;
+use GestorImagenes\Http\Requests\CargarSimulacrosRequest;
+use Carbon\Carbon;
+
+use Input;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InformeController extends Controller {
 
@@ -76,8 +81,8 @@ class InformeController extends Controller {
 			        'color'    => '#6f6ae1',
 			        'fontSize' => 25,
 		    ],
-		    'width' => 650,
-		    'height' => 500,
+		    'width' => 1000,
+		    'height' => 670,
 		    'isStacked'           => true,
 		]);  
 
@@ -184,8 +189,75 @@ class InformeController extends Controller {
         return view('informes.generar-basica-secundaria', ['informar' => $informar, 'lava' => $lava]);
 	}
 
+    public function getCargarSimulacros()
+    {
+    	return view('informes.cargar-simulacros');
+    }
+
+
+    public function postCargarSimulacros(CargarSimulacrosRequest $request)
+    {
+		$imagen = $request->file('imagen');
+		$ruta = '/img/';
+		$nombre = 'Informes_Resultados_Pagina'.'.'.$imagen->guessExtension();
+		$imagen->move(getcwd().$ruta, $nombre);
+
+		$result = Excel::load('public/img/Informes_Resultados_Pagina.xlsx')->get();	
+
+    	foreach ($result as $informe) 
+    	{		
+     			Informe::create([
+     				'codigo_simulacro' => $informe->codigo_simulacro,
+     				'Materia1' =>$informe->materia1,
+     				'proMat1' =>$informe->promat1,
+     				'Materia2' =>$informe->materia2,
+     				'proMat2' =>$informe->promat2,
+     				'Materia3' =>$informe->materia3,
+     				'proMat3' =>$informe->promat3,
+     				'Materia4' =>$informe->materia4,
+     				'proMat4' =>$informe->promat4,
+     				'Materia5' =>$informe->materia5,
+     				'proMat5' =>$informe->promat5,
+     				'proTotal' =>$informe->prototal,
+     				'cuantitativo' =>$informe->cuantitativo,
+     				'competencias_ciudadanas' =>$informe->competencias_ciudadanas,
+     				'Mat1Componentes1' =>$informe->mat1componentes1,
+     				'Mat1Componentes2' =>$informe->mat1componentes2,
+     				'Mat1Componentes3' =>$informe->mat1componentes3,
+     				'Mat1Competencia1' =>$informe->mat1competencia1,
+     				'Mat1Competencia2' =>$informe->mat1competencia2,
+     				'Mat1Competencia3' =>$informe->mat1competencia3,
+     				'Mat2Componentes1' =>$informe->mat2componentes1,
+     				'Mat2Componentes2' =>$informe->mat2componentes2,
+     				'Mat2Componentes3' =>$informe->mat2componentes3,
+     				'Mat2Componentes4' =>$informe->mat2componentes4,
+     				'Mat2Competencia1' =>$informe->mat2competencia1,
+     				'Mat2Competencia2' =>$informe->mat2competencia2,
+     				'Mat2Competencia3' =>$informe->mat2competencia3,
+     				'Mat4Competencia1' =>$informe->mat4competencia1,
+     				'Mat4Competencia2' =>$informe->mat4competencia2,
+     				'Mat4Competencia3' =>$informe->mat4competencia3,
+     				'Mat5Competencia1' =>$informe->mat5competencia1,
+     				'Mat5Competencia2' =>$informe->mat5competencia2,
+     				'Mat5Competencia3' =>$informe->mat5competencia3,
+     				'NombreEstudiante' =>$informe->nombreestudiante,
+     				'colegio' =>$informe->colegio,
+     				'ciudad' =>$informe->ciudad,
+     				'FechaAplico' =>$informe->fechaaplico,
+     				'NivelIngles' =>$informe->nivelingles,
+     				'simulacro' =>$informe->simulacro,
+     				'grado' =>$informe->grado,
+     				'codigo' =>$informe->codigo,
+     				'puesto' =>$informe->puesto,
+     			]);
+    	}
+
+		return redirect("/")->with('creada', 'Archivo subido');
+    }
+
 	public function missingMethod($parameters = array())
 	{
 		abort(404);
 	}
+
 }
