@@ -17,13 +17,87 @@
 @endif
 <div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">Inicio</div>
 
 				<div class="panel-body">
 					Bienvenido {{Auth::user()->nombre}}
 				</div>
+
+				@if (Auth::guest())	
+				
+				@elseif(Auth::user()->tipo === 'evaluarte')	
+
+				@elseif(Auth::user()->tipo === 'estudiante')	
+
+				<div class="row">		
+					<div class="col-sm-4 col-md-offset-1">
+							<div class="thumbnail">
+								<div class="caption">	
+									<a href="{{ url('/validado/informes') }}">	
+										<img src="http://evaluarte.edu.co/wp-content/uploads/2012/09/logo-evaluarte-web.jpg" style="width: 271px;">
+									</a>
+								</div>
+							</div>
+					</div>
+
+					<div class="col-sm-4 col-md-offset-1">
+							<div class="thumbnail">
+								<div class="caption">	
+									<a href="{{ url('/validado/informes') }}">	
+										<img src="http://evaluarte.edu.co/wp-content/uploads/2012/09/logo-evaluarte-web.jpg" style="width: 271px;">
+									</a>
+								</div>
+							</div>
+					</div>
+
+					<div class="col-sm-4 col-md-offset-1">
+							<div class="thumbnail">
+								<div class="caption">	
+									<a href="{{ url('/validado/informes') }}">	
+										<img src="http://evaluarte.edu.co/wp-content/uploads/2012/09/logo-evaluarte-web.jpg" style="width: 271px;">
+									</a>
+								</div>
+							</div>
+					</div>
+
+					<div class="col-sm-4 col-md-offset-1">
+							<div class="thumbnail">
+								<div class="caption">	
+									<a href="{{ url('/validado/informes') }}">	
+										<img src="http://evaluarte.edu.co/wp-content/uploads/2012/09/logo-evaluarte-web.jpg" style="width: 271px;">
+									</a>
+								</div>
+							</div>
+					</div>
+
+					<div class="col-sm-4 col-md-offset-1">
+							<div class="thumbnail">
+								<div class="caption">	
+									<a href="{{ url('/validado/informes') }}">	
+										<img src="http://evaluarte.edu.co/wp-content/uploads/2012/09/logo-evaluarte-web.jpg" style="width: 271px;">
+									</a>
+								</div>
+							</div>
+					</div>
+				</div>
+
+				@elseif(Auth::user()->tipo === 'colegio')
+
+				<div class="row">		
+					<div class="col-sm-4 col-md-offset-1" style="">
+							<div class="thumbnail">
+								<div class="caption">	
+									<a href="{{ url('/validado/albumes') }}">	
+										<img src="http://evaluarte.edu.co/wp-content/uploads/2012/09/logo-evaluarte-web.jpg" style="width: 271px;">
+									</a>
+								</div>
+							</div>
+					</div>
+				</div>
+				@endif
+
 			</div>
 		</div>
 	</div>
