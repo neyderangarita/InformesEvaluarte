@@ -44,9 +44,9 @@
 						<li><a href="{{ url('/validado/informes/cargar-simulacros') }}">Subir resultados</a></li>
 					@elseif(Auth::user()->tipo === 'estudiante')	
 						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
-						<li><a href="{{ url('/validado/informes') }}">Basica Primaria</a></li>
+<!-- 						<li><a href="{{ url('/validado/informes') }}">Basica Primaria</a></li>
 						<li><a href="{{ url('/validado/informes') }}">Basica Secundaria</a></li>
-						<li><a href="{{ url('/validado/informes') }}">Media vocacional</a></li>
+						<li><a href="{{ url('/validado/informes') }}">Media vocacional</a></li> -->
 					@elseif(Auth::user()->tipo === 'colegio')
 						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
 						<li><a href="{{ url('/validado/albumes') }}">Informes Colegio</a></li>			
