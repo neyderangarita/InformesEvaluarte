@@ -45,7 +45,7 @@ class AlbumController extends Controller {
 			]
 		);
 
-		return redirect('/validado/albumes/')->with('creado', 'El álbum ha sido creado');
+		return redirect('/validado/albumes/admin-informes')->with('creado', 'El álbum ha sido creado');
 	}
 
 	public function getActualizarAlbum($id)
