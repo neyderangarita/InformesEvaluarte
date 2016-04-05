@@ -2,6 +2,13 @@
 
 use GestorImagenes\Http\Requests\EditarPerfilRequest;
 use Illuminate\Support\Facades\Auth;
+use GestorImagenes\Usuario;
+
+use GestorImagenes\Http\Requests\CargarUsuariosRequest;
+use Carbon\Carbon;
+
+use Input;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UsuarioController extends Controller {
 
@@ -30,6 +37,43 @@ class UsuarioController extends Controller {
 		$usuario->save();
 		return redirect('/validado')->with('actualizado', 'Su perfil ha sido actualizado.');
 	}
+
+	public function getListarUsuarios()
+	{
+		$usuarios =  \DB::table('usuarios')->get();
+		return view('usuario.listar-usuarios', ['usuarios' => $usuarios]);
+	}
+
+    public function getCargarUsuarios()
+    {
+    	return view('usuario.cargar-usuarios');
+    }
+
+    public function postCargarUsuarios(CargarUsuariosRequest $request)
+    {
+		$imagen = $request->file('imagen');
+		$ruta = '/img/';
+		$nombre = 'usuarios'.'.'.$imagen->guessExtension();
+		$imagen->move(getcwd().$ruta, $nombre);
+
+		$result = Excel::load('public/img/usuarios.xlsx')->get();	
+
+    	foreach ($result as $informe) 
+    	{		
+     			Usuario::create([
+     				'id' => $informe->id,
+     				'nombre' =>$informe->nombre,
+     				'email' => $informe->email,
+     				'password' =>bcrypt($informe->password),
+     				'tipo' =>$informe->tipo,
+     			]);                                                                                                                                                                                                                                         
+    	}
+
+    	// protected $fillable = ['id', 'nombre', 'email', 'password', 'pregunta', 'respuesta', 'tipo'];
+
+		return redirect("/")->with('creada', 'Archivo subido');
+    }
+
 
 	public function missingMethod($parameters = array())
 	{

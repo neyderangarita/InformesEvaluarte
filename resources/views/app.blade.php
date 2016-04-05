@@ -42,11 +42,10 @@
 						<li><a href="{{ url('/') }}">Inicio</a></li>	
 						<li><a href="{{ url('/validado/albumes/admin-informes') }}">Informes Administrador</a></li>
 						<li><a href="{{ url('/validado/informes/cargar-simulacros') }}">Subir resultados</a></li>
+						<li><a href="{{ url('/validado/usuario/listar-usuarios') }}">Listar Usuarios</a></li>
+						<li><a href="{{ url('/validado/usuario/cargar-usuarios') }}">Subir Usuarios</a></li>
 					@elseif(Auth::user()->tipo === 'estudiante')	
 						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
-<!-- 						<li><a href="{{ url('/validado/informes') }}">Basica Primaria</a></li>
-						<li><a href="{{ url('/validado/informes') }}">Basica Secundaria</a></li>
-						<li><a href="{{ url('/validado/informes') }}">Media vocacional</a></li> -->
 					@elseif(Auth::user()->tipo === 'colegio')
 						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
 						<li><a href="{{ url('/validado/albumes') }}">Informes Colegio</a></li>			

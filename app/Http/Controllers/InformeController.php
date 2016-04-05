@@ -17,125 +17,6 @@ class InformeController extends Controller {
 		$this->middleware('auth');
 	}
 
-	public function getIndex()
-	{
-		 $informes = [];
-		// $usuario = Auth::user();
-		// $informes = $usuario->informes;
-		// $informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
-		// $lava = new Lavacharts; // See note below for Laravel	
-		// $materias = $lava->DataTable();
-		// $materias->addStringColumn('Simulacros');
-
-		// if($informes[0]->simulacro == 'Tu saber')
-		// {
-		// 	if($informes[0]->grado == 'JARDÍN' || $informes[0]->grado == 'PREJARDÍN' || $informes[0]->grado == 'TRANSICIÓN' )
-		// 	{
-		// 		$materias->addNumberColumn('Cognitiva');
-		// 		$materias->addNumberColumn('Comunicativa');
-		// 		$materias->addNumberColumn('Socio-Afectiva');
-		// 		$materias->setDateTimeFormat('Y');
-			
-		// 		for ($i=0; $i < sizeof($informes); $i++) { 
-		// 			$simu = 'Simulacro '. ($i+1) ; 
-		// 			$materias->addRow([$simu, round($informes[$i]->proMat1), round($informes[$i]->proMat2), round($informes[$i]->proMat3)]);
-		// 		}			
-		// 	}
-		// 	elseif($informes[0]->grado == '10°' || $informes[0]->grado == '11°')
-		// 	{
-		// 		$materias->addNumberColumn('Matematicas');
-		// 		$materias->addNumberColumn('Lectura Crítica');
-		// 		$materias->addNumberColumn('Sociales y Ciudadanas');
-		// 		$materias->addNumberColumn('Ciencias Naturales');
-		// 		$materias->addNumberColumn('Ingles');
-		// 		$materias->setDateTimeFormat('Y');
-			
-		// 		for ($i=0; $i < sizeof($informes); $i++) { 
-		// 			$simu = 'Simulacro '. ($i+1) ; 
-		// 			$materias->addRow([$simu, round($informes[$i]->proMat1), round($informes[$i]->proMat2), round($informes[$i]->proMat3), round($informes[$i]->proMat4), round($informes[$i]->proMat5)]);
-		// 		}
-		// 	}
-		// 	else
-		// 	{
-		// 		$materias->addNumberColumn('Lenguaje');
-		// 		$materias->addNumberColumn('Matematicas');
-		// 		$materias->addNumberColumn('Sociales y Ciudadanas');
-		// 		$materias->addNumberColumn('Ciencias Naturales');
-		// 		$materias->addNumberColumn('Ingles');
-		// 		$materias->setDateTimeFormat('Y');
-			
-		// 		for ($i=0; $i < sizeof($informes); $i++) { 
-		// 			$simu = 'Simulacro '. ($i+1) ; 
-		// 			$materias->addRow([$simu, round($informes[$i]->proMat1), round($informes[$i]->proMat2), round($informes[$i]->proMat3), round($informes[$i]->proMat4), round($informes[$i]->proMat5)]);
-		// 		}
-		// 	}
-		// }
-		// else
-		// {
-		// 	if($informes[0]->grado == '10°' || $informes[0]->grado == '11°')
-		// 	{
-		// 		$materias->addNumberColumn('Lectura Crítica');
-		// 		$materias->addNumberColumn('Matematicas');
-		// 		$materias->addNumberColumn('Sociales y Ciudadanas');
-		// 		$materias->addNumberColumn('Ciencias Naturales');
-		// 		$materias->addNumberColumn('Ingles');
-		// 		$materias->setDateTimeFormat('Y');
-			
-		// 		for ($i=0; $i < sizeof($informes); $i++) { 
-		// 			$simu = 'Simulacro '. ($i+1) ; 
-		// 			$materias->addRow([$simu, round(($informes[$i]->proMat4 * 3) * (5/13)), round(($informes[$i]->proMat1 * 3) * (5/13)),round(($informes[$i]->proMat5 * 3) * (5/13)), round(($informes[$i]->proMat2* 3) * (5/13)), round($informes[$i]->proMat3 * (5/13))]);
-		// 		}
-		// 	}
-		// 	elseif($informes[0]->grado == '3°' || $informes[0]->grado == '4°')
-		// 	{
-		// 		$materias->addNumberColumn('Lectura Crítica');
-		// 		$materias->addNumberColumn('Matematicas');
-		// 		$materias->setDateTimeFormat('Y');
-			
-		// 		for ($i=0; $i < sizeof($informes); $i++) { 
-		// 			$simu = 'Simulacro '. ($i+1) ; 
-		// 			$materias->addRow([
-		// 				$simu, 
-		// 				$informes[$i]->proMat4, 
-		// 				$informes[$i]->proMat1  
-		// 			]);
-		// 		} 
-		// 	}
-		// 	elseif($informes[0]->grado == '5°' || $informes[0]->grado == '6°' || $informes[0]->grado == '7°' || $informes[0]->grado == '8°' || $informes[0]->grado == '9°')
-		// 	{
-		// 		$materias->addNumberColumn('Lectura Crítica');
-		// 		$materias->addNumberColumn('Matematicas');
-		// 		$materias->addNumberColumn('Competencias ciudadanas');
-		// 		$materias->addNumberColumn('Ciencias Naturales');
-		// 		$materias->addNumberColumn('Edu. Economica y financiera');
-		// 		$materias->setDateTimeFormat('Y');
-			
-		// 		for ($i=0; $i < sizeof($informes); $i++) { 
-		// 			$simu = 'Simulacro '. ($i+1) ; 
-		// 			$materias->addRow([$simu, 
-		// 				$informes[$i]->proMat4, 
-		// 				$informes[$i]->proMat1,
-		// 				$informes[$i]->proMat5,
-		// 				$informes[$i]->proMat2,
-		// 				$informes[$i]->competencias_ciudadanas]);
-		// 		}
-		// 	}
-		// }
-
-		// $lava->ColumnChart('Simulacros', $materias, [
-		//     'title' => 'PUNTAJE GLOBAL',
-		//     'titleTextStyle' => [
-		// 	        'color'    => '#6f6ae1',
-		// 	        'fontSize' => 25,
-		//     ],
-		//     'width' => 650,
-		//     'height' => 500,
-		//     'isStacked'           => true,
-		// ]);  
-		// return view('informes.mostrar', ['informes' => $informes, 'lava' => $lava]);
-		return view('informes.mostrar', ['informes' => $informes]);
-	}
-
 	public function getGenerarMediaVocacional($id, $idSimulacro)
 	{
 		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
@@ -173,7 +54,7 @@ class InformeController extends Controller {
 		    'legend' => ['position' => 'none'],
 		    'colors' => ['#d52e32', '#d89d3f'],
 		    'datatable' => $materias,
-		    'barGroupWidth'  =>  0,  ///int | 'string'
+		    'barGroupWidth'  =>  0, 
 		    'width' => 520,
 		    'height' => 330,
 		    'isStacked' => false,
@@ -190,7 +71,6 @@ class InformeController extends Controller {
 	public function getGenerarBasicaSecundaria($id, $idSimulacro)
 	{
 		$usuario = Auth::user();
-		//$informes = $usuario->informes;
 		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
 		$lava = new Lavacharts; // See note below for Laravel	
 		$materias = $lava->DataTable();
