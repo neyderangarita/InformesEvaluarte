@@ -134,6 +134,7 @@ class InformeController extends Controller {
 
 			if($simulacro == 'Tu saber')
 			{
+				$titulo= 'PROMEDIO';
 				if($informes[0]->grado == 'JARDÍN' || $informes[0]->grado == 'PREJARDÍN' || $informes[0]->grado == 'TRANSICIÓN' )
 				{
 					$materias->addNumberColumn('Cognitiva');
@@ -178,6 +179,7 @@ class InformeController extends Controller {
 			}
 			else
 			{	
+				$titulo= 'PUNTAJE GLOBAL';
 				if($informes[0]->grado == '10°' || $informes[0]->grado == '11°')
 				{
 					$materias->addNumberColumn('Lectura Crítica');
@@ -280,7 +282,7 @@ class InformeController extends Controller {
 			}
 
 			$lava->ColumnChart('Simulacros', $materias, [
-			    'title' => 'PUNTAJE GLOBAL',
+			    'title' => $titulo,
 			    'titleTextStyle' => [
 				        'color'    => '#6f6ae1',
 				        'fontSize' => 25,
@@ -289,6 +291,8 @@ class InformeController extends Controller {
 			    'height' => 500,
 			    'isStacked'           => true,
 			]);
+
+
 		
 			return view('informes.consultar-simulacro', ['informes' => $informes, 'lava' => $lava]); 
 		}
