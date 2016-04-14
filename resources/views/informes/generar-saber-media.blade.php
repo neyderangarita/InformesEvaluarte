@@ -5,7 +5,7 @@
         <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
     </head>  
     <body>
-        <div style="text-align: center; font: 80%; font-family: "Homer Simpson", cursive">
+        <div style="text-align: center; font: 80%; font-family: Geneva, Cambria, monospace, Arial, Helvetica, sans-serif">
                 <img class="custom_logo ie_png"  style="position: absolute;top: 0px;left: 0px;width: auto;" src="/imagenes/fondo-saber-media.png">
                 
                 <div style="position: absolute;top: 318px;left: 130px;width: 400px;"  id="perf_div">
