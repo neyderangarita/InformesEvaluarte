@@ -145,7 +145,19 @@ class InformeController extends Controller {
 					for ($i=0; $i < sizeof($informes); $i++) { 
 						$simu = 'Simulacro '. ($i+1) ; 
 						$materias->addRow([$simu, round($informes[$i]->proMat1/3), round($informes[$i]->proMat2/3), round($informes[$i]->proMat3/3)]);
-					}			
+					}	
+
+					$lava->ColumnChart('Simulacros', $materias, [
+					    'title' => $titulo,
+					    'titleTextStyle' => [
+						        'color'    => '#6f6ae1',
+						        'fontSize' => 25,
+					    ],
+					    'colors' => ['#49ABAA', '#A8A913', '#DAA10E'],
+					    'width' => 650,
+					    'height' => 500,
+					    'isStacked'           => true,
+					]);
 				}
 				elseif($informes[0]->grado == '10°' || $informes[0]->grado == '11°')
 				{
@@ -160,6 +172,19 @@ class InformeController extends Controller {
 						$simu = 'Simulacro '. ($i+1) ; 
 						$materias->addRow([$simu, round($informes[$i]->proMat1/5), round($informes[$i]->proMat2/5), round($informes[$i]->proMat3/5), round($informes[$i]->proMat4/5), round($informes[$i]->proMat5/5)]);
 					}
+
+					$lava->ColumnChart('Simulacros', $materias, [
+					    'title' => $titulo,
+					    'titleTextStyle' => [
+						        'color'    => '#6f6ae1',
+						        'fontSize' => 25,
+					    ],
+					    'colors' => ['#E11D23', '#DAA10E', '#972C8E', '#A8A913', '#49ABAA'],
+					    'width' => 650,
+					    'height' => 500,
+					    'isStacked'           => true,
+					]);
+
 				}
 				else
 				{
@@ -175,6 +200,18 @@ class InformeController extends Controller {
 						$simu = 'Simulacro '. ($i+1) ; 
 						$materias->addRow([$simu, round($informes[$i]->proMat1/5), round($informes[$i]->proMat2/5), round($informes[$i]->proMat3/5), round($informes[$i]->proMat4/5), round($informes[$i]->proMat5/5)]);
 					}
+
+					$lava->ColumnChart('Simulacros', $materias, [
+					    'title' => $titulo,
+					    'titleTextStyle' => [
+						        'color'    => '#6f6ae1',
+						        'fontSize' => 25,
+					    ],
+					    'colors' => ['#E11D23', '#DAA10E', '#972C8E', '#A8A913', '#49ABAA'],
+					    'width' => 650,
+					    'height' => 500,
+					    'isStacked'           => true,
+					]);
 				}
 			}
 			else
@@ -278,22 +315,19 @@ class InformeController extends Controller {
 							$informes[$i]->proMat3,
 							$informes[$i]->proMat5]);
 					}
-				}	
+				}
+
+				$lava->ColumnChart('Simulacros', $materias, [
+				    'title' => $titulo,
+				    'titleTextStyle' => [
+					        'color'    => '#6f6ae1',
+					        'fontSize' => 25,
+				    ],
+				    'width' => 650,
+				    'height' => 500,
+				    'isStacked'           => true,
+				]);	
 			}
-
-			$lava->ColumnChart('Simulacros', $materias, [
-			    'title' => $titulo,
-			    'titleTextStyle' => [
-				        'color'    => '#6f6ae1',
-				        'fontSize' => 25,
-			    ],
-			    'colors' => ['#E11D23', '#DAA10E', '#972C8E', '#A8A913', '#49ABAA'],
-			    'width' => 650,
-			    'height' => 500,
-			    'isStacked'           => true,
-			]);
-
-
 		
 			return view('informes.consultar-simulacro', ['informes' => $informes, 'lava' => $lava]); 
 		}
