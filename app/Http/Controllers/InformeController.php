@@ -173,7 +173,7 @@ class InformeController extends Controller {
 					for ($i=0; $i < sizeof($informes); $i++) 
 					{ 
 						$simu = 'Simulacro '. ($i+1) ; 
-						$materias->addRow([$simu, round($informes[$i]->proMat1), round($informes[$i]->proMat2), round($informes[$i]->proMat3), round($informes[$i]->proMat4), round($informes[$i]->proMat5)]);
+						$materias->addRow([$simu, round($informes[$i]->proMat1/5), round($informes[$i]->proMat2/5), round($informes[$i]->proMat3/5), round($informes[$i]->proMat4/5), round($informes[$i]->proMat5/5)]);
 					}
 				}
 			}

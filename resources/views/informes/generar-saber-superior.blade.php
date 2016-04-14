@@ -54,11 +54,11 @@
                     <span>&nbsp;</span>
                 </div>
            <!-- Datos del personales del estudiante -->
-            <div style="position: absolute;top: 182px;left: 126px;width: 350px;">
+            <div style="position: absolute;top: 188px;left: 126px;width: 350px;">
                 <span>{{ $informar->NombreEstudiante }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 182px;left: 458px;width: 250px;">
+            <div style="position: absolute;top: 188px;left: 486px;width: 250px;">
                 <span>{{ $informar->colegio }}<span>&nbsp;</span>
             </div>
 
