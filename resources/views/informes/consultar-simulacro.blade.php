@@ -38,10 +38,9 @@
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
 					<div class="caption">	
-
 					    <H3>Simulacro {{ $index+1 }}</H3>
  						@if($informe->simulacro == 'Tu saber')					
- 						<p><strong>Fecha Aplico:</strong> {{ $informe->FechaAplico }}</p>
+ 						<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
 	 						@if($informe->grado == 'JARDÍN' || $informe->grado == 'PREJARDÍN' || $informe->grado == 'TRANSICIÓN')
 	 							<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3) / 3}}</p>
 								<p><a href="/validado/informes/generar-saber-basica/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>					
@@ -54,7 +53,7 @@
 							@endif
 						@elseif($informe->simulacro == 'saber 10 y 11 4 Preguntas Abiertas' || $informe->simulacro == 'saber 4,6,7 y 8' || $informe->simulacro == 'saber 3_Nuevo' || $informe->simulacro == 'saber 5_Nuevo')					 
 						<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
-						<p><strong>Fecha Aplico:</strong> {{ $informe->FechaAplico }}</p>
+						<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
 							@if($informe->grado == '10°' || $informe->grado == '11°')
 								<p><a href="/validado/informes/generar-media-vocacional/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>					
 							@elseif($informe->grado == '3°' || $informe->grado == '4°')						    
