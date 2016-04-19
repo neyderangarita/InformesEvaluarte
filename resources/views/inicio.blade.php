@@ -21,7 +21,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Inicio</div>
 				<div class="panel-body">
-					Bienvenido {{Auth::user()->nombre}}
+					Bienvenid@ {{Auth::user()->nombre}}
 				</div>
 
 				@if (Auth::guest())	
