@@ -36,6 +36,7 @@
 
 							<div class="col-md-6">
 								<select name="descripcion" id="descripcion" class="form-control">
+								    <option value="{{old('descripcion')}}">{{old('descripcion')}}</option>
 								    <option value="tu saber">tu saber</option>
 								    <option value="saber 4,6,7 y 8">saber 4,6,7 y 8</option>
 								    <option value="saber 10 y 11 4 Preguntas Abiertas">saber 10 y 11 4 Preguntas Abiertas</option>
