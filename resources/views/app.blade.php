@@ -48,7 +48,7 @@
 						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
 					@elseif(Auth::user()->tipo === 'colegio')
 						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
-						<li><a href="{{ url('/validado/albumes') }}">Informes Colegio</a></li>			
+						<!-- <li><a href="{{ url('/validado/albumes') }}">Informes Colegio</a></li> -->			
 					@endif
 				</ul>
 

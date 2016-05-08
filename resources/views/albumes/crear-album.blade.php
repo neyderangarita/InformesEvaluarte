@@ -30,9 +30,20 @@
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Descripción</label>
-							<div class="col-md-6">
+<!-- 						<div class="col-md-6">
 								<input type="text" class="form-control" name="descripcion" value="{{old('descripcion')}}">
-							</div>
+							</div> -->
+
+							<div class="col-md-6">
+								<select name="descripcion" id="descripcion" class="form-control">
+								    <option value="">Seleccione</option>
+								    <option value="tu saber">tu saber</option>
+								    <option value="saber 4,6,7 y 8">saber 4,6,7 y 8</option>
+								    <option value="saber 10 y 11 4 Preguntas Abiertas">saber 10 y 11 4 Preguntas Abiertas</option>
+								    <option value="perfil profesional">perfil profesional</option>
+								    <option value="saber pro">saber pro</option>
+								</select>
+							</div>								
 						</div>
 
 						<div class="form-group">

@@ -15,10 +15,23 @@ class AlbumController extends Controller {
 
 	public function getIndex()
 	{
-		$usuario = Auth::user();
-		$albumes = $usuario->albumes;
-		return view('albumes.mostrar', ['albumes' => $albumes]);
+		// $usuario = Auth::user();
+		// $albumes = $usuario->albumes;
+		// return view('albumes.mostrar', ['albumes' => $albumes]);
+	}
 
+	public function getConsultarAlbumes($albumes){
+
+    	$usuario = Auth::user();
+    	$albumes = Album::where('usuario_id', '=', $usuario->id)->where('descripcion', $albumes)->take(100)->get();
+
+    	if(sizeof($albumes) > 0)
+    	{
+    		return view('albumes.consultar-albumes', ['albumes' => $albumes]); 
+    	}
+		else{
+			return redirect("/validado")->with('creada', 'No se han creados albumes');
+		}	
 	}
 
 	public function getCrearAlbum()
