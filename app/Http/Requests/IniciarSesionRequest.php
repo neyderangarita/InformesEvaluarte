@@ -14,7 +14,6 @@ class IniciarSesionRequest extends Request {
 		return [
 			'email' => 'required',
 			//'email' => 'required|email',
-			'g-recaptcha-response' => 'required|captcha'
 			'password' => 'required'
 		];
 	}
