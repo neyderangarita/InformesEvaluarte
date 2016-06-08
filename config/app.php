@@ -150,6 +150,7 @@ return [
 		'Barryvdh\DomPDF\ServiceProvider',
 		'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
+		'Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider',
 		
 		/*
 		 * Application Service Providers...
@@ -208,6 +209,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'PDF' 		=> 'Barryvdh\DomPDF\Facade',
 		'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
+		'Captcha'   => '\Buzz\LaravelGoogleCaptcha\CaptchaFacade',
 
 	],
 
