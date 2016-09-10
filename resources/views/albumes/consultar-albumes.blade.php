@@ -18,25 +18,51 @@
 @endif
 
 @if(sizeof($albumes) > 0)	
-	@foreach($albumes as $index => $album)
-		@if($index%3 == 0)
-		<div class="row">
-		@endif
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<div class="caption">
-						<h3>{{$album->nombre}}</h3>
-						<p>{{$album->descripcion}}</p>
-						<p><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></p>
+
+<div class="container">
+
+    <table class="table table-striped">
+    	<thead>
+           <tr>
+              <td>Nombre del informe</td>
+              <td>Nombre de la prueba</td>
+              <td>Acción</td>
+          </tr>
+        </thead>
+		<tbody>
+
+		@foreach($albumes as $index => $album)
+
+
+			@if($index%3 == 0)
+<!-- 			<div class="row"> -->
+			@endif
+<!-- 				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<div class="caption">
+							<h3>{{$album->nombre}}</h3>
+							<p>{{$album->descripcion}}</p>
+							<p><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></p>
+						</div>
 					</div>
-				</div>
-			</div>
-		@if(($index+1)%3 == 0)
-		</div>
-		@endif
-	@endforeach
+				</div> -->
+			@if(($index+1)%3 == 0)
+<!-- 			</div> -->
+			@endif
+
+	          <tr>
+	              <td>{{$album->nombre}}</td>
+	              <td>{{$album->descripcion}}</td>
+	              <td><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></td>
+	          </tr>
+
+		@endforeach
+    	</tbody>
+	</table>
+</div>
 
 	{!!$albumes->render()!!}
+
 @else
 <div class="alert alert-danger">
 	<p>Al parecer no tienes informes. Crea uno.</p>
