@@ -23,6 +23,7 @@ class AlbumController extends Controller {
 	public function getConsultarAlbumes($albumes){
 
     	$usuario = Auth::user();
+		$albumes = Album::where('usuario_id', '=', $usuario->id)->where('descripcion', $albumes)->paginate(10);
 
     	if(sizeof($albumes) > 0)
     	{
