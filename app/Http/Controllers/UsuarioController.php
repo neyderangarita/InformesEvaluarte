@@ -40,7 +40,7 @@ class UsuarioController extends Controller {
 
 	public function getListarUsuarios()
 	{
-		$usuarios =  \DB::table('usuarios')->get();
+		$usuarios =  \DB::table('usuarios')->paginate(10);	
 		return view('usuario.listar-usuarios', ['usuarios' => $usuarios]);
 	}
 
@@ -68,8 +68,6 @@ class UsuarioController extends Controller {
      				'tipo' =>$informe->tipo,
      			]);                                                                                                                                                                                                                                         
     	}
-
-    	// protected $fillable = ['id', 'nombre', 'email', 'password', 'pregunta', 'respuesta', 'tipo'];
 
 		return redirect("/")->with('creada', 'Archivo subido');
     }

@@ -33,11 +33,12 @@
 	</table>
 </div>
 
+	{!!$usuarios->render()!!}
+
 @else
 	<div class="alert alert-danger">
 		<p>Al parecer no tienes informes. Crea uno.</p>
 	</div>
 @endif
-
 </div>
 @endsection

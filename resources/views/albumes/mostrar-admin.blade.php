@@ -39,7 +39,12 @@
 		@if(($index+1)%3 == 0)
 		</div>
 		@endif
+
+		
 	@endforeach
+
+	{!!$albumes->render()!!}
+
 @else
 <div class="alert alert-danger">
 	<p>Al parecer no tienes informes. Crea uno.</p>
