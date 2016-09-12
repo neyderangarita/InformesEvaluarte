@@ -6,10 +6,10 @@
 	<div class="alert alert-success">
 		<p>El informe ha sido creado</p>
 	</div>
+	  <div class="col-sm-12" style="text-align
 @endif
 <div class="container-fluid">
-	<div class="row">
-	  <div class="col-sm-12" style="text-align: center">
+	<div class="row">: center">
 		<img src="/imagenes/colegio.jpg"  width="40%" height="40%" />
 	  </div>
 	</div>
@@ -19,9 +19,8 @@
 
 @if(sizeof($albumes) > 0)	
 
-<div class="container">
-
-    <table class="table table-striped">
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped">
     	<thead>
            <tr>
               <td>Nombre del informe</td>
@@ -30,39 +29,17 @@
           </tr>
         </thead>
 		<tbody>
-
 		@foreach($albumes as $index => $album)
-
-
-			@if($index%3 == 0)
-<!-- 			<div class="row"> -->
-			@endif
-<!-- 				<div class="col-sm-6 col-md-4">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3>{{$album->nombre}}</h3>
-							<p>{{$album->descripcion}}</p>
-							<p><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></p>
-						</div>
-					</div>
-				</div> -->
-			@if(($index+1)%3 == 0)
-<!-- 			</div> -->
-			@endif
-
 	          <tr>
 	              <td>{{$album->nombre}}</td>
 	              <td>{{$album->descripcion}}</td>
-	              <td><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></td>
+	              <td><center><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></center></td>
 	          </tr>
-
 		@endforeach
     	</tbody>
 	</table>
+	<center>{!!$albumes->render()!!}</center>
 </div>
-
-	{!!$albumes->render()!!}
-
 @else
 <div class="alert alert-danger">
 	<p>Al parecer no tienes informes. Crea uno.</p>

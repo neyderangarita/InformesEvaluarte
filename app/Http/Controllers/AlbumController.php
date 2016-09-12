@@ -23,7 +23,7 @@ class AlbumController extends Controller {
 	public function getConsultarAlbumes($albumes){
 
     	$usuario = Auth::user();
-		$albumes = Album::where('usuario_id', '=', $usuario->id)->where('descripcion', $albumes)->paginate(9);
+		$albumes = Album::where('usuario_id', '=', $usuario->id)->where('descripcion', $albumes)->paginate(10);
 
     	if(sizeof($albumes) > 0)
     	{
@@ -41,7 +41,7 @@ class AlbumController extends Controller {
 
 	public function getAdminInformes()
 	{
-		$albumes =  \DB::table('albumes')->paginate(9);	
+		$albumes =  \DB::table('albumes')->paginate(10);	
 		return view('albumes.mostrar-admin', ['albumes' => $albumes]);
 	}
 

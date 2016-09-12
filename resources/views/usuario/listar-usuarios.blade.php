@@ -4,8 +4,11 @@
 
 <div class="container-fluid">
 @if(sizeof($usuarios) > 0)
+
+
 <div class="table-responsive">
-    <table class="table table-striped table-bordered">
+
+    <table class="table table-striped">
 	    <thead>
 		  <tr>	
 		  	<th>Id</th>
@@ -33,7 +36,7 @@
 	</table>
 </div>
 
-	{!!$usuarios->render()!!}
+	<center>{!!$usuarios->render()!!}</center>
 
 @else
 	<div class="alert alert-danger">

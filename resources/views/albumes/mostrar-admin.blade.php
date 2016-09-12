@@ -19,9 +19,30 @@
 <p><a href="/validado/albumes/crear-album" class="btn btn-primary" role="button">Crear informe</a></p>
 @endif
 
-@if(sizeof($albumes) > 0)	
+@if(sizeof($albumes) > 0)
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped">
+    	<thead>
+           <tr>
+              <td>Nombre del informe</td>
+              <td>Nombre de la prueba</td>
+              <td>Acción</td>
+              <td>Acción</td>
+          </tr>
+        </thead>
+		<tbody>
 	@foreach($albumes as $index => $album)
-		@if($index%3 == 0)
+		
+	    <tr>
+	        <td>{{$album->nombre}}</td>
+	        <td>{{$album->descripcion}}</td>
+	        <td><center><a href="/validado/albumes/actualizar-album/{{$album->id}}" class="btn btn-primary" role="button">Editar informe</a></center></td>
+	        <td><center><a href="/validado/fotos/admin-archivos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></center></td>
+	    </tr>		
+
+
+<!-- 		@if($index%3 == 0)
 		<div class="row">
 		@endif
 			<div class="col-sm-6 col-md-4">
@@ -30,20 +51,20 @@
 						<h3>{{$album->nombre}}</h3>
 						<p>{{$album->descripcion}}</p>
 						<p><a href="/validado/albumes/actualizar-album/{{$album->id}}" class="btn btn-primary" role="button">Editar informe</a></p>
-
 						<p><a href="/validado/fotos/admin-archivos?id={{$album->id}}" class="btn btn-primary" role="button">Ver archivos</a></p>
 
 					</div>
 				</div>
 			</div>
+
 		@if(($index+1)%3 == 0)
 		</div>
-		@endif
+		@endif -->
 
 		
 	@endforeach
 
-	{!!$albumes->render()!!}
+	<center>{!!$albumes->render()!!}</center>
 
 @else
 <div class="alert alert-danger">
