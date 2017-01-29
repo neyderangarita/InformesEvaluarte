@@ -25,8 +25,12 @@
 				</div>
 
 				@if (Auth::guest())	
+
+
 				
 				@elseif(Auth::user()->tipo === 'evaluarte')	
+
+
 
 				@elseif(Auth::user()->tipo === 'estudiante')	
 
@@ -126,7 +130,6 @@
 										</a>
 								</div>
 						</div>
-
 					</div>
 
 				@endif

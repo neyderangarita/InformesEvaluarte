@@ -29,7 +29,7 @@
 				</button>
 
 				<a href="/">
-					<img class="custom_logo ie_png" alt="Simulacros Evaluarte (PDF)" src="/imagenes/evaluarte-logo.png">
+					<img class="custom_logo ie_png img-responsive" width="200" height="150" alt="Simulacros Evaluarte (PDF)" src="/imagenes/evaluarte-logo.png">
 				</a>
 				
 			</div>

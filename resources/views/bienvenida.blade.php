@@ -15,7 +15,10 @@
 				<div class="panel-heading">Inicio</div>
 
 				<div class="panel-body">
-					Por favor inicie sesión para usar el sistema
+				<center>
+					<p><b><h3>Por favor inicie sesión para usar el sistema</h3></b></p>
+					<img class="custom_logo ie_png img-responsive" width="70%" height="70%" alt="inicie sesion" src="/imagenes/por favor inicie sesión.jpg">
+				</center>
 				</div>
 			</div>
 		</div>

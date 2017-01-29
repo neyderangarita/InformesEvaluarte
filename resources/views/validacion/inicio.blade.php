@@ -69,6 +69,14 @@
 							</div>
 						</div>
 					</form>
+
+
+					<center>
+						
+						<img class="custom_logo ie_png img-responsive" width="50%" height="50%" alt="inicie sesion" src="/imagenes/iniciar sesión.png">
+					</center>
+
+
 				</div>
 			</div>
 		</div>
