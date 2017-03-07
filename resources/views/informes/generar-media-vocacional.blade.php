@@ -50,25 +50,25 @@
             </div>
             <!-- DATOS SUB AREA -->
             <div style="position: absolute;top: 345px;left: 0;width: 78%;">
-                <span>{{ $informar->cuantitativo }}<span>&nbsp;</span>
+                <span>{{ round($informar->cuantitativo, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 405px;left: 0;width: 78%;">
-                <span>{{ $informar->competencias_ciudadanas }}<span>&nbsp;</span>
+                <span>{{ round($informar->competencias_ciudadanas, 2) }}<span>&nbsp;</span>
             </div>
             <!-- DATOS NIVEL INGLES -->
             <div style="position: absolute;top: 507px;left: 0;width: 108%;">
-                <span>{{ $informar->NivelIngles }}<span>&nbsp;</span>
+                <span>{{ round($informar->NivelIngles, 2) }}<span>&nbsp;</span>
             </div>
             <!-- DATOS COMPETENCIAS -->
 
             <div style="position: absolute;top: 273px;left: 0;width: 128%;">
-                <span>{{ $informar->Mat4Competencia1 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat4Competencia1, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 273px;left: 0;width: 140%;">
-                <span>{{ $informar->Mat4Competencia2 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat4Competencia2, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 273px;left: 0;width: 153%;">
-                <span>{{ $informar->Mat4Competencia3 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat4Competencia3, 2) }}<span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 303px;left: 0;width: 128%;">
@@ -106,13 +106,13 @@
             </div>
 
             <div style="position: absolute;top: 333px;left: 0;width: 128%;">
-                <span>{{ $informar->Mat1Competencia1 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat1Competencia1, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 333px;left: 0;width: 140%;">
-                <span>{{ $informar->Mat1Competencia2 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat1Competencia2, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 333px;left: 0;width: 153%;">
-                <span>{{ $informar->Mat1Competencia3 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat1Competencia3, 2) }}<span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 361px;left: 0;width: 128%;">
@@ -150,13 +150,13 @@
             </div>
 
             <div style="position: absolute;top: 391px;left: 0;width: 128%;">
-                <span>{{ $informar->Mat5Competencia1 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat5Competencia1, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 391px;left: 0;width: 140%;">
-                <span>{{ $informar->Mat5Competencia2 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat5Competencia2, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 391px;left: 0;width: 153%;">
-                <span>{{ $informar->Mat5Competencia3 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat5Competencia3, 2) }}<span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 420px;left: 0;width: 128%;">
@@ -194,13 +194,13 @@
             </div>
 
             <div style="position: absolute;top: 451px;left: 0;width: 128%;">
-                <span>{{ $informar->Mat2Competencia1 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat2Competencia1, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 451px;left: 0;width: 140%;">
-                <span>{{ $informar->Mat2Competencia2 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat2Competencia2, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 451px;left: 0;width: 153%;">
-                <span>{{ $informar->Mat2Competencia3 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat2Competencia3, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 479px;left: 0;width: 128%;">
                 <span>
@@ -237,13 +237,13 @@
             </div>
             <!-- DATOS COMPONENTES -->
             <div style="position: absolute;top: 333px;left: 0;width: 167%;">
-                <span>{{ $informar->Mat1Componentes1 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat1Componentes1, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 333px;left: 0;width: 175%;">
-                <span>{{ $informar->Mat1Componentes2 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat1Componentes2, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 333px;left: 0;width: 184%;">
-                <span>{{ $informar->Mat1Componentes3 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat1Componentes3, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 361px;left: 0;width: 167%;">
                 <span>
@@ -293,16 +293,16 @@
             </div>
 
             <div style="position: absolute;top: 451px;left: 0;width: 167%;">
-                <span>{{ $informar->Mat2Componentes1 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat2Componentes1, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 451px;left: 0;width: 175%;">
-                <span>{{ $informar->Mat2Componentes2 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat2Componentes2, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 451px;left: 0;width: 184%;">
-                <span>{{ $informar->Mat2Componentes3 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat2Componentes3, 2) }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 451px;left: 0;width: 192%;">
-                <span>{{ $informar->Mat2Componentes4 }}<span>&nbsp;</span>
+                <span>{{ round($informar->Mat2Componentes4, 2) }}<span>&nbsp;</span>
             </div>
 
 
@@ -366,7 +366,6 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-
         </div>  
     </body>
 </html>
