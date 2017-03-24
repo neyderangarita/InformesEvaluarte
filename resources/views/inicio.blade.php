@@ -26,69 +26,64 @@
 
 				@if (Auth::guest())	
 
-
-				
 				@elseif(Auth::user()->tipo === 'evaluarte')	
-
-
 
 				@elseif(Auth::user()->tipo === 'estudiante')	
 
-				<div class="row">		
-					<div class="col-sm-4 col-md-offset-1">
-							<div class="thumbnail">
-									<a href="{{ url('/validado/informes/consultar-simulacro/Tu saber') }}">	
-										<img alt="Tu saber" src="/imagenes/tu-saber.png">	
-									</a>
-							</div>
-					</div>
+					<div class="row">	
 
-					<div class="col-sm-4 col-md-offset-1">
-							<div class="thumbnail">
-									<a href="{{ url('/validado/informes/consultar-simulacro/saber 4,6,7 y 8') }}">	
-										<img src="/imagenes/saber-3-9.png">
-									</a>								
-							</div>
-					</div>
-
-					<div class="col-sm-4 col-md-offset-1">
-							<div class="thumbnail">
-									<a href="{{ url('/validado/informes/consultar-simulacro/saber 10 y 11 4 Preguntas Abiertas') }}">	
-										<img src="/imagenes/saber10-11.png">
-									</a>								
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/informes/consultar-simulacro/Tu saber') }}">	
+											<img alt="Tu saber" src="/imagenes/tu-saber.png">	
+										</a>
 								</div>
-					</div>
+						</div>
 
-					<div class="col-sm-4 col-md-offset-1">
-							<div class="thumbnail">
-									<a href="{{ url('/validado/informes') }}">	
-										<img src="/imagenes/perfil-profesional.png">
-									</a>
-							</div>
-					</div>
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/informes/consultar-simulacro/saber 4,6,7 y 8') }}">	
+											<img src="/imagenes/saber-3-9.png">
+										</a>								
+								</div>
+						</div>
 
-					<div class="col-sm-4 col-md-offset-1">
-							<div class="thumbnail">
-									<a href="{{ url('/validado/informes') }}">	
-										<img src="/imagenes/saber-pro.png">
-									</a>
-							</div>
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/informes/consultar-simulacro/saber 10 y 11 4 Preguntas Abiertas') }}">	
+											<img src="/imagenes/saber10-11.png">
+										</a>								
+									</div>
+						</div>
+
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/informes') }}">	
+											<img src="/imagenes/perfil-profesional.png">
+										</a>
+								</div>
+						</div>
+
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/informes') }}">	
+											<img src="/imagenes/saber-pro.png">
+										</a>
+								</div>
+						</div>
+
+
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/informes/consultar-simulacro/Mi saber aprueba') }}">	
+											<img src="/imagenes/saber-pro.png">
+										</a>
+								</div>
+						</div>
+						
 					</div>
-				</div>
 
 				@elseif(Auth::user()->tipo === 'colegio')
-
-<!-- 				<div class="row">		
-					<div class="col-sm-4 col-md-offset-1" style="">
-							<div class="thumbnail">
-								<div class="caption">	
-									<a href="{{ url('/validado/albumes') }}">	
-										<img src="http://evaluarte.edu.co/wp-content/uploads/2012/09/logo-evaluarte-web.jpg" style="width: 271px;">
-									</a>
-								</div>
-							</div>
-					</div>
-				</div> -->
 
 					<div class="row">		
 						<div class="col-sm-4 col-md-offset-1">
@@ -130,6 +125,15 @@
 										</a>
 								</div>
 						</div>
+
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/informes/consultar-simulacro/Mi saber aprueba') }}">	
+											<img src="/imagenes/saber-pro.png">
+										</a>
+								</div>
+						</div>
+
 					</div>
 
 				@endif
@@ -138,4 +142,8 @@
 		</div>
 	</div>
 </div>
+
+
+
+
 @endsection

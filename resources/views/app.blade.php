@@ -44,6 +44,8 @@
 						<li><a href="{{ url('/validado/informes/cargar-simulacros') }}">Subir resultados</a></li>
 						<li><a href="{{ url('/validado/usuario/listar-usuarios') }}">Listar Usuarios</a></li>
 						<li><a href="{{ url('/validado/usuario/cargar-usuarios') }}">Subir Usuarios</a></li>
+						<li><a href="{{ url('/validado/informes/resultados-informes') }}">Listar resultados</a></li>
+
 					@elseif(Auth::user()->tipo === 'estudiante')	
 						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
 					@elseif(Auth::user()->tipo === 'colegio')

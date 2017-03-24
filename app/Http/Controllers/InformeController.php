@@ -24,6 +24,7 @@ class InformeController extends Controller {
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->download('simulacro_saber.pdf');
+        
 	}
 
 	public function getGenerarBasicaPrimaria($id, $idSimulacro)
@@ -563,6 +564,12 @@ class InformeController extends Controller {
 			],
 		]);  
         return view('informes.generar-saber-basica', ['informar' => $informar, 'lava' => $lava]);
+	}
+
+	public function getResultadosInformes()
+	{
+		$informes =  \DB::table('informes')->paginate(10);	
+		return view('informes.resultados-informes', ['informes' => $informes]);
 	}
 
 	public function missingMethod($parameters = array())
