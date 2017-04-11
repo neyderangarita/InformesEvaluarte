@@ -115,7 +115,7 @@
             </div>
 
             <!-- DATOS NIVEL INGLES -->
-            <div style="position: absolute;top: 525px;left: 0;width: 104%;">
+            <div style="position: absolute;top: 536px;left: 0;width: 62%;">
                 <span>{{ $informar->NivelIngles }}<span>&nbsp;</span>
             </div>
 
