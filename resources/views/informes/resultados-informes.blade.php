@@ -74,7 +74,6 @@
 		</tbody>
 	</table>
 	<center>{!!$informes->render()!!}</center>
-</div>
 
 @else
 <div class="alert alert-danger">
