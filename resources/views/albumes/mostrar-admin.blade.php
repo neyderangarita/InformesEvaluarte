@@ -26,6 +26,12 @@
 @endif
 
 @if(sizeof($albumes) > 0)
+<div class="row">
+	<div class="col-md-12">
+		<h1>Listado informes de colegios</h1>
+	</div>	
+</div>
+</br>
 
 <div class="table-responsive">
     <table class="table table-hover table-bordered table-striped">
@@ -37,8 +43,9 @@
               <td>Borrar</td>
           </tr>
         </thead>
+
 		<tbody>
-	@foreach($albumes as $index => $album)
+		@foreach($albumes as $index => $album)
 		
 	    <tr>
 	        <td>{{$album->nombre}}</td>
@@ -59,8 +66,9 @@
 				</center>
 	        </td>        
 	    </tr>		
-		
-	@endforeach
+		</tbody>
+		@endforeach
+	</table>
 
 	<center>{!!$albumes->render()!!}</center>
 

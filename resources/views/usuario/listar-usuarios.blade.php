@@ -4,7 +4,12 @@
 
 <div class="container-fluid">
 @if(sizeof($usuarios) > 0)
-
+<div class="row">
+	<div class="col-md-12">
+		<h1>Listado de usuarios</h1>
+	</div>	
+</div>
+</br>
 
 <div class="table-responsive">
 

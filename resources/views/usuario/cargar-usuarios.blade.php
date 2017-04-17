@@ -8,6 +8,13 @@
 	</div>
 @endif
 
+<div class="row">
+	<div class="col-md-12">
+		<h1>Cargar usuarios</h1>
+	</div>	
+</div>
+</br>
+
 <div class="container-fluid">
 	<form class="form-horizontal" role="form" method="POST" action="/validado/usuario/cargar-usuarios" enctype="multipart/form-data">
 		<input type="hidden" name="_token" value="{{ csrf_token() }}" required>

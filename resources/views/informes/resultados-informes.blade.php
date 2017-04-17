@@ -26,6 +26,7 @@
 @endif
 
 
+@if(sizeof($informes) > 0)
 <div class="row">
 	<div class="col-md-12">
 		<h1>Listado de resutados de simulacros</h1>
@@ -33,7 +34,6 @@
 </div>
 </br>
 
-@if(sizeof($informes) > 0)
 <div class="table-responsive">
     <table class="table table-hover table-bordered table-striped">
     	<thead>
