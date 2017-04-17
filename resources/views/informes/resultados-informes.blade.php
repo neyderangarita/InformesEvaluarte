@@ -16,19 +16,24 @@
 
 @if(Session::has('eliminado'))
 	<div class="alert alert-danger">
-		<p>El álbum ha sido eliminado</p>
+		<p>Registro eliminado correctamente.</p>
 	</div>
 @endif
 
 <div class="container-fluid">
 @if(Auth::user()->tipo === 'evaluarte')
-
 <!-- <p><a href="/validado/albumes/crear-album" class="btn btn-primary" role="button">Crear informe</a></p> -->
-
 @endif
 
-@if(sizeof($informes) > 0)
 
+<div class="row">
+	<div class="col-md-12">
+		<h1>Listado de resutados de simulacros</h1>
+	</div>	
+</div>
+</br>
+
+@if(sizeof($informes) > 0)
 <div class="table-responsive">
     <table class="table table-hover table-bordered table-striped">
     	<thead>
@@ -46,39 +51,30 @@
           </tr>
         </thead>
 		<tbody>
-	@foreach($informes as $index => $informe)
-		
-	    <tr>
-	    	<td>{{$informe->codigo}}</td>
-	        <td>{{$informe->codigo_simulacro}}</td>
-	        <td>{{$informe->NombreEstudiante}}</td>
-	        <td>{{$informe->colegio}}</td>
-	        <td>{{$informe->grado}}</td>	      
-	        <td>{{$informe->ciudad}}</td>
-	        <td>{{$informe->FechaAplico}}</td>
-	        <td>{{$informe->simulacro}}</td>
-	        <td>{{$informe->puesto}}</td>
-
-<!-- 	        <td>
-	        	<center>
-	        		<a href="/validado/fotos/admin-archivos?id={{$informe->id}}" class="btn btn-primary" role="button">Ver</a>
-	        		<a href="/validado/albumes/actualizar-album/{{$informe->id}}" class="btn btn-success" role="button">Editar</a>			
-	        	</center>
-	        </td> -->
-	        <td>
-<!-- 	        	<center>
-	       		<form action="/validado/albumes/eliminar-album" method="POST">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}" required>
-						<input type="hidden" name="id" value="{{ $informe->id }}" required>
-						<input type="submit" class="btn btn-danger" role="button" value="Eliminar"/>	        		
-				</form>	
-				</center> -->
-	        </td>        
-	    </tr>		
-		
-	@endforeach
-
+			@foreach($informes as $index => $informe)
+			    <tr>
+			    	<td>{{$informe->codigo}}</td>
+			        <td>{{$informe->codigo_simulacro}}</td>
+			        <td>{{$informe->NombreEstudiante}}</td>
+			        <td>{{$informe->colegio}}</td>
+			        <td>{{$informe->grado}}</td>	      
+			        <td>{{$informe->ciudad}}</td>
+			        <td>{{$informe->FechaAplico}}</td>
+			        <td>{{$informe->simulacro}}</td>
+			        <td>{{$informe->puesto}}</td>     
+					<td>
+						<form class="" action="/validado/informes/eliminar-informe" method="POST">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}" required>
+							<input type="hidden" name="id" value="{{ $informe->id }}" required>
+							<input type="submit" class="btn btn-danger" role="button" value="Eliminar"/>
+						</form>
+					</td>
+			    </tr>		
+			@endforeach			
+		</tbody>
+	</table>
 	<center>{!!$informes->render()!!}</center>
+</div>
 
 @else
 <div class="alert alert-danger">

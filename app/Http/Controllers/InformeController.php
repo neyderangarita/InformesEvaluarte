@@ -5,6 +5,7 @@ use GestorImagenes\Informe;
 use Khill\Lavacharts\Lavacharts;
 use GestorImagenes\Http\Controllers\PDF;
 use GestorImagenes\Http\Requests\CargarSimulacrosRequest;
+use GestorImagenes\Http\Requests\EliminarInformeRequest;
 use Carbon\Carbon;
 
 use Input;
@@ -568,8 +569,16 @@ class InformeController extends Controller {
 
 	public function getResultadosInformes()
 	{
-		$informes =  \DB::table('informes')->paginate(10);	
+		
+		$informes =  \DB::table('informes')->paginate(15);	
 		return view('informes.resultados-informes', ['informes' => $informes]);
+	}
+
+	public function postEliminarInforme(EliminarInformeRequest $request)
+	{
+		$informe = Informe::find($request->get('id'));
+		$informe->delete();
+		return redirect("/validado/informes/resultados-informes")->with('eliminado', 'Registro eliminado correctamente');
 	}
 
 	public function missingMethod($parameters = array())

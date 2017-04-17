@@ -5,7 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Evaluarte</title>
-	<link href="/css/app.css" rel="stylesheet">
+	<!-- {!!Html::style('/css/app.css')!!} -->
+	<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -17,68 +19,78 @@
 
 
 </head>
-<body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 
-				<a href="/">
-					<img class="custom_logo ie_png img-responsive" width="200" height="150" alt="Simulacros Evaluarte (PDF)" src="/imagenes/evaluarte-logo.png">
-				</a>
-				
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">			
-					@if (Auth::guest())	
-						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>				
-					@elseif(Auth::user()->tipo === 'evaluarte')	
-						<li><a href="{{ url('/') }}">Inicio</a></li>	
-						<li><a href="{{ url('/validado/albumes/admin-informes') }}">Informes Administrador</a></li>
-						<li><a href="{{ url('/validado/informes/cargar-simulacros') }}">Subir resultados</a></li>
-						<li><a href="{{ url('/validado/usuario/listar-usuarios') }}">Listar Usuarios</a></li>
-						<li><a href="{{ url('/validado/usuario/cargar-usuarios') }}">Subir Usuarios</a></li>
-						<li><a href="{{ url('/validado/informes/resultados-informes') }}">Listar resultados</a></li>
-
-					@elseif(Auth::user()->tipo === 'estudiante')	
-						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
-					@elseif(Auth::user()->tipo === 'colegio')
-						<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
-						<!-- <li><a href="{{ url('/validado/albumes') }}">Informes Colegio</a></li> -->			
-					@endif
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/validacion/inicio') }}">Iniciar Sesión</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/validacion/salida') }}">Salir</a></li>
-								@if (Auth::user()->tipo === 'colegio' || Auth::user()->tipo === 'evaluarte')	
-									<li><a href="{{ url('/validado/usuario/editar-perfil') }}">Actualizar Perfil</a></li>
-								@endif
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
+			<a href="/">
+				<img class="custom_logo ie_png img-responsive" width="200" height="150" alt="Simulacros Evaluarte (PDF)" src="/imagenes/evaluarte-logo.png">
+			</a>
+			
 		</div>
-	</nav>
 
-	@yield('content')
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
-	<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
-	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script>
-	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
-</body>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">			
+				@if (Auth::guest())	
+					<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>				
+				@elseif(Auth::user()->tipo === 'evaluarte')	
+					<li><a href="{{ url('/') }}">Inicio</a></li>	
+					<li><a href="{{ url('/validado/albumes/admin-informes') }}">Informes Administrador</a></li>
+					<li><a href="{{ url('/validado/informes/cargar-simulacros') }}">Subir resultados</a></li>
+					<li><a href="{{ url('/validado/usuario/listar-usuarios') }}">Listar Usuarios</a></li>
+					<li><a href="{{ url('/validado/usuario/cargar-usuarios') }}">Subir Usuarios</a></li>
+					<li><a href="{{ url('/validado/informes/resultados-informes') }}">Listar resultados</a></li>
+
+				@elseif(Auth::user()->tipo === 'estudiante')	
+					<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
+				@elseif(Auth::user()->tipo === 'colegio')
+					<li><a href="{{ url('/validacion/inicio') }}">Inicio</a></li>
+					<!-- <li><a href="{{ url('/validado/albumes') }}">Informes Colegio</a></li> -->			
+				@endif
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				@if (Auth::guest())
+					<li><a href="{{ url('/validacion/inicio') }}">Iniciar Sesión</a></li>
+				@else
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="{{ url('/validacion/salida') }}">Salir</a></li>
+							@if (Auth::user()->tipo === 'colegio' || Auth::user()->tipo === 'evaluarte')	
+								<li><a href="{{ url('/validado/usuario/editar-perfil') }}">Actualizar Perfil</a></li>
+							@endif
+						</ul>
+					</li>
+				@endif
+			</ul>
+		</div>
+	</div>
+</nav>
+
+@yield('content')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ asset('/js/script.js') }}"></script>
+<!-- {!!Html::script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')!!}
+@section('scripts')
+	{!!Html::script('js/script.js')!!}
+@show
+ -->
+
+<!-- 
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>		
+<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script>
+<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
+-->
+
 </html>
