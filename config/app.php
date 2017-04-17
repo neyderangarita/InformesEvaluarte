@@ -150,8 +150,6 @@ return [
 		'Barryvdh\DomPDF\ServiceProvider',
 		'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
-		'Collective\Html\HtmlServiceProvider',
-
 		
 		/*
 		 * Application Service Providers...
@@ -210,8 +208,6 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'PDF' 		=> 'Barryvdh\DomPDF\Facade',
 		'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
-		'Form' 		=> 'Collective\Html\FormFacade',
-      	'Html' 		=> 'Collective\Html\HtmlFacade',
 
 	],
 
