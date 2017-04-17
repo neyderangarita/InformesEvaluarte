@@ -7,7 +7,6 @@
 	<title>Evaluarte</title>
 	<!-- {!!Html::style('/css/app.css')!!} -->
 	<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -77,7 +76,7 @@
 @yield('content')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{{ asset('/js/script.js') }}"></script>
+<!-- <script src="{{ asset('/js/script.js') }}"></script> -->
 <!-- {!!Html::script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')!!}
 @section('scripts')
 	{!!Html::script('js/script.js')!!}
