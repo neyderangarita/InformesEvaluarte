@@ -25,8 +25,17 @@ class InformeController extends Controller {
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->download('simulacro_saber.pdf');
-        
 	}
+
+	public function getGenerarMisaberAprueba($id, $idSimulacro)
+	{
+		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
+        $view =  \View::make('informes.generar-misaber-aprueba', compact( 'informar'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->download('simulacro_saber.pdf');  
+	}
+
 
 	public function getGenerarBasicaPrimaria($id, $idSimulacro)
 	{

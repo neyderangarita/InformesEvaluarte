@@ -48,7 +48,8 @@
 								<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3 + $informe->proMat4 + $informe->proMat5) / 5}}</p>	
 								<p><a href="/validado/informes/generar-saber-media/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
 							@endif
-						@elseif($informe->simulacro == 'saber 10 y 11 4 Preguntas Abiertas' || $informe->simulacro == 'saber 4,6,7 y 8' || $informe->simulacro == 'saber 3_Nuevo' || $informe->simulacro == 'saber 5_Nuevo' || $informe->simulacro == 'Mi Saber Aprueba')					 
+
+						@elseif($informe->simulacro == 'saber 10 y 11 4 Preguntas Abiertas' || $informe->simulacro == 'saber 4,6,7 y 8' || $informe->simulacro == 'saber 3_Nuevo' || $informe->simulacro == 'saber 5_Nuevo')					 
 							<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
 							<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
 
@@ -59,7 +60,12 @@
 								@elseif($informe->grado == '5°' || $informe->grado == '6°' || $informe->grado == '7°' || $informe->grado == '8°' || $informe->grado == '9°')	
 									<p><a href="/validado/informes/generar-basica-secundaria/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
 								@endif	
-
+						@elseif($informe->simulacro == 'Mi Saber Aprueba')
+								<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
+								<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>		 
+								@if($informe->grado == '10°' || $informe->grado == '11°')
+									<p><a href="/validado/informes/generar-misaber-aprueba/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>									
+								@endif	
 						@endif
 					</div>
 				</div>
