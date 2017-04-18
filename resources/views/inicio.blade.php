@@ -76,7 +76,7 @@
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
 										<a href="{{ url('/validado/informes/consultar-simulacro/Mi Saber Aprueba') }}">	
-											<img src="/imagenes/saber-pro.png">
+											<img src="/imagenes/misaberaprueba.jpeg">
 										</a>
 								</div>
 						</div>
@@ -129,7 +129,7 @@
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
 										<a href="{{ url('/validado/informes/consultar-simulacro/Mi Saber Aprueba') }}">	
-											<img src="/imagenes/saber-pro.png">
+											<img src="/imagenes/misaberaprueba.jpeg">
 										</a>
 								</div>
 						</div>
@@ -142,8 +142,5 @@
 		</div>
 	</div>
 </div>
-
-
-
 
 @endsection
