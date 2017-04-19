@@ -5,52 +5,52 @@
     </head>  
     <body>
         <div style="text-align: center; font: 80%; font-family: "Homer Simpson", cursive">
-            <img src="imagenes/fondo-nuevo.png" />
+            <img src="imagenes/misaberaprueba.jpg" />
             <!-- Datos del personales del estudiante -->
             <div style="position: absolute;top: 150px;left: 0;width: 27%;">
                 <span>{{ $informar->codigo }}<span>&nbsp;</span>
             </div>
 
-           <div style="position: absolute;top: 190px;left: 0;width: 27%;">
+           <div style="position: absolute;top: 191px;left: 0;width: 27%;">
                 <span>{{ $informar->puesto }}<span>&nbsp;</span>
             </div>
 
             <div style="position: absolute;top: 150px;left: 0;width: 92%;">
                 <span>{{ $informar->NombreEstudiante }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 150px;left: 0;width: 180%;">
+            <div style="position: absolute;top: 150px;left: 0;width: 183%;">
                 <span>{{ $informar->FechaAplico }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 190px;left: 0;width: 86%;">
+            <div style="position: absolute;top: 191px;left: 0;width: 86%;">
                 <span>{{ $informar->colegio }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 190px;left: 0;width: 177%;">
+            <div style="position: absolute;top: 191px;left: 0;width: 177%;">
                 <span>{{ $informar->ciudad }}<span>&nbsp;</span>
             </div>
             <!-- Datos PUNTAJE materias -->
-            <div style="position: absolute;top: 300px;left: 0;width: 44%;">
+            <div style="position: absolute;top: 300px;left: 0;width: 42%;">
                 <span>{{ $informar->proMat2 }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 360px;left: 0;width: 44%;">
+            <div style="position: absolute;top: 360px;left: 0;width: 42%;">
                 <span>{{ $informar->proMat1 }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 420px;left: 0;width: 44%;">
+            <div style="position: absolute;top: 420px;left: 0;width: 42%;">
                 <span>{{ $informar->proMat3 }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 480px;left: 0;width: 44%;">
+            <div style="position: absolute;top: 480px;left: 0;width: 42%;">
                 <span>{{ $informar->proMat4 }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 540px;left: 0;width: 44%;">
+            <div style="position: absolute;top: 540px;left: 0;width: 42%;">
                 <span>{{ $informar->proMat5 }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 600px;left: 0;width: 44%;">
+            <div style="position: absolute;top: 600px;left: 0;width: 42%;">
                 <span>
                     {{ round(($informar->proMat4 * 3) * (5/13)) + round(($informar->proMat1 * 3) * (5/13)) + round(($informar->proMat5 * 3) * (5/13)) + round(($informar->proMat2 * 3) * (5/13)) + round($informar->proMat3 * (5/13)) }}
                 <span>&nbsp;</span>
             </div>
 
             <!-- DATOS NIVEL DE DESEMPEÑO -->
-            <div style="position: absolute;top: 300px;left: 0;width: 66%;">
+            <div style="position: absolute;top: 300px;left: 0;width: 64%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->proMat2) >=0 && str_replace( ',', '.',$informar->proMat2) <= 40)
                         Insuficiente 
@@ -64,7 +64,7 @@
                 <span>&nbsp;</span>
             </div>            
 
-            <div style="position: absolute;top: 360px;left: 0;width: 66%;">
+            <div style="position: absolute;top: 360px;left: 0;width: 64%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->proMat1) >=0 && str_replace( ',', '.',$informar->proMat1) <= 40)
                         Insuficiente 
@@ -78,7 +78,7 @@
                 <span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 420px;left: 0;width: 66%;">
+            <div style="position: absolute;top: 420px;left: 0;width: 64%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->proMat3) >=0 && str_replace( ',', '.',$informar->proMat3) <= 40)
                         Insuficiente 
@@ -91,7 +91,7 @@
                     @endif 
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 480px;left: 0;width: 66%;">
+            <div style="position: absolute;top: 480px;left: 0;width: 64%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->proMat4) >=0 && str_replace( ',', '.',$informar->proMat4) <= 40)
                         Insuficiente 
@@ -107,15 +107,15 @@
 
 
             <!-- DATOS SUB AREA -->
-            <div style="position: absolute;top: 368px;left: 0;width: 90%;">
+            <div style="position: absolute;top: 368px;left: 0;width: 89%;">
                 <span>{{ round($informar->cuantitativo, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 425px;left: 0;width: 90%;">
+            <div style="position: absolute;top: 425px;left: 0;width: 89%;">
                 <span>{{ round($informar->competencias_ciudadanas, 2) }}<span>&nbsp;</span>
             </div>
 
             <!-- DATOS NIVEL INGLES -->
-            <div style="position: absolute;top: 536px;left: 0;width: 62%;">
+            <div style="position: absolute;top: 536px;left: 0;width: 60%;">
                 <span>{{ $informar->NivelIngles }}<span>&nbsp;</span>
             </div>
 
@@ -305,17 +305,17 @@
 
             <!-- DATOS COMPONENTES -->
 
-            <div style="position: absolute;top: 346px;left: 0;width: 164%;">
+            <div style="position: absolute;top: 346px;left: 0;width: 166%;">
                 <span>{{ round($informar->Mat1Componentes1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 346px;left: 0;width: 172%;">
+            <div style="position: absolute;top: 346px;left: 0;width: 176%;">
                 <span>{{ round($informar->Mat1Componentes2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 346px;left: 0;width: 180%;">
+            <div style="position: absolute;top: 346px;left: 0;width: 184%;">
                 <span>{{ round($informar->Mat1Componentes3, 2) }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 376px;left: 0;width: 164%;">
+            <div style="position: absolute;top: 376px;left: 0;width: 166%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Componentes1) >=0 && str_replace( ',', '.',$informar->Mat1Componentes1) <= 2)
                         SB 
@@ -333,7 +333,7 @@
 
 
 
-            <div style="position: absolute;top: 376px;left: 0;width: 172%;">
+            <div style="position: absolute;top: 376px;left: 0;width: 176%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Componentes2) >=0 && str_replace( ',', '.',$informar->Mat1Componentes2) <= 2)
                         SB 
@@ -348,7 +348,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 376px;left: 0;width: 180%;">
+            <div style="position: absolute;top: 376px;left: 0;width: 184%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Componentes3) >=0 && str_replace( ',', '.',$informar->Mat1Componentes3) <= 2)
                         SB 
@@ -364,7 +364,7 @@
                 <span>&nbsp;</span>
             </div>
 
-
+            <!--
             <div style="position: absolute;top: 407px;left: 0;width: 164%;">
                 <span>{{ round($informar->Mat3Componentes1, 2) }}<span>&nbsp;</span>
             </div>
@@ -421,18 +421,20 @@
                 <span>&nbsp;</span>
             </div>
 
+            -->
 
-            <div style="position: absolute;top: 467px;left: 0;width: 164%;">
+            
+            <div style="position: absolute;top: 467px;left: 0;width: 166%;">
                 <span>{{ round($informar->Mat4Componentes1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 467px;left: 0;width: 172%;">
+            <div style="position: absolute;top: 467px;left: 0;width: 176%;">
                 <span>{{ round($informar->Mat4Componentes2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 467px;left: 0;width: 180%;">
+            <div style="position: absolute;top: 467px;left: 0;width: 184%;">
                 <span>{{ round($informar->Mat4Componentes3, 2) }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 497px;left: 0;width: 164%;">
+            <div style="position: absolute;top: 497px;left: 0;width: 166%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Componentes1) >=0 && str_replace( ',', '.',$informar->Mat4Componentes1) <= 2)
                         SB 
@@ -447,7 +449,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 497px;left: 0;width: 172%;">
+            <div style="position: absolute;top: 497px;left: 0;width: 176%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Componentes2) >=0 && str_replace( ',', '.',$informar->Mat4Componentes2) <= 2)
                         SB 
@@ -462,7 +464,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 497px;left: 0;width: 180%;">
+            <div style="position: absolute;top: 497px;left: 0;width: 184%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Componentes3) >=0 && str_replace( ',', '.',$informar->Mat4Componentes3) <= 2)
                         SB 
@@ -477,8 +479,6 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-
-
 
         </div>  
     </body>

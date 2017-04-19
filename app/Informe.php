@@ -35,12 +35,15 @@ class Informe extends Model
 			,'Mat2Competencia1'
 			,'Mat2Competencia2'
 			,'Mat2Competencia3'
+
 			,'Mat4Competencia1'
 			,'Mat4Competencia2'
 			,'Mat4Competencia3'
+
 			,'Mat5Competencia1'
 			,'Mat5Competencia2'
 			,'Mat5Competencia3'
+			
 			,'NombreEstudiante'
 			,'colegio'
 			,'ciudad'
@@ -50,6 +53,22 @@ class Informe extends Model
 			,'grado'	
 			,'codigo'
 			,'puesto'
+
+			,'Mat3Componentes1'
+			,'Mat3Componentes2'
+			,'Mat3Componentes3'
+
+			,'Mat3Competencia1'
+			,'Mat3Competencia2'
+			,'Mat3Competencia3' 
+
+			,'Mat4Componentes1'
+			,'Mat4Componentes2'
+			,'Mat4Componentes3'
+
+			,'Mat5Componentes1'
+			,'Mat5Componentes2'
+			,'Mat5Componentes3'
 			];
   
 	public function propietario()

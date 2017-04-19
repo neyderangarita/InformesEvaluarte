@@ -396,25 +396,48 @@ class InformeController extends Controller {
      				'proTotal' =>$informe->ptotal,
      				'cuantitativo' =>$informe->cuanti,
      				'competencias_ciudadanas' =>$informe->comp_ciuda,
+
      				'Mat1Componentes1' =>$informe->m1componentes1,
      				'Mat1Componentes2' =>$informe->m1componentes2,
      				'Mat1Componentes3' =>$informe->m1componentes3,
+
      				'Mat1Competencia1' =>$informe->m1competencia1,
      				'Mat1Competencia2' =>$informe->m1competencia2,
      				'Mat1Competencia3' =>$informe->m1competencia3,
+
      				'Mat2Componentes1' =>$informe->m2componentes1,
      				'Mat2Componentes2' =>$informe->m2componentes2,
      				'Mat2Componentes3' =>$informe->m2componentes3,
      				'Mat2Componentes4' =>$informe->m2componentes4,
+
      				'Mat2Competencia1' =>$informe->m2competencia1,
      				'Mat2Competencia2' =>$informe->m2competencia2,
      				'Mat2Competencia3' =>$informe->m2competencia3,
+
+     				'Mat3Componentes1' =>$informe->m3componentes1,
+     				'Mat3Componentes2' =>$informe->m3componentes2,
+     				'Mat3Componentes3' =>$informe->m3componentes3,
+
+     				'Mat3Competencia1' =>$informe->m3competencia1,
+     				'Mat3Competencia2' =>$informe->m3competencia2,
+     				'Mat3Competencia3' =>$informe->m3competencia3,
+
+     				'Mat4Componentes1' =>$informe->m4componentes1,
+     				'Mat4Componentes2' =>$informe->m4componentes2,
+     				'Mat4Componentes3' =>$informe->m4componentes3,
+
      				'Mat4Competencia1' =>$informe->m4competencia1,
      				'Mat4Competencia2' =>$informe->m4competencia2,
      				'Mat4Competencia3' =>$informe->m4competencia3,
+
+     				'Mat5Componentes1' =>$informe->m5componentes1,
+     				'Mat5Componentes2' =>$informe->m5componentes2,
+     				'Mat5Componentes3' =>$informe->m5componentes3,
+
      				'Mat5Competencia1' =>$informe->m5competencia1,
      				'Mat5Competencia2' =>$informe->m5competencia2,
      				'Mat5Competencia3' =>$informe->m5competencia3,
+
      				'NombreEstudiante' =>$informe->nombreestudiante,
      				'colegio' =>$informe->colegio,
      				'ciudad' =>$informe->ciudad,
