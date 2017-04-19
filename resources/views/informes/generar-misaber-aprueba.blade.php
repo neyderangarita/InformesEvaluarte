@@ -7,24 +7,24 @@
         <div style="text-align: center; font: 80%; font-family: "Homer Simpson", cursive">
             <img src="imagenes/misaberaprueba.jpg" />
             <!-- Datos del personales del estudiante -->
-            <div style="position: absolute;top: 150px;left: 0;width: 27%;">
+            <div style="position: absolute;top: 138px;left: 0;width: 27%;">
                 <span>{{ $informar->codigo }}<span>&nbsp;</span>
             </div>
 
-           <div style="position: absolute;top: 191px;left: 0;width: 27%;">
+           <div style="position: absolute;top: 180px;left: 0;width: 27%;">
                 <span>{{ $informar->puesto }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 150px;left: 0;width: 92%;">
+            <div style="position: absolute;top: 138px;left: 0;width: 92%;">
                 <span>{{ $informar->NombreEstudiante }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 150px;left: 0;width: 183%;">
+            <div style="position: absolute;top: 138px;left: 0;width: 183%;">
                 <span>{{ $informar->FechaAplico }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 191px;left: 0;width: 86%;">
+            <div style="position: absolute;top: 180px;left: 0;width: 86%;">
                 <span>{{ $informar->colegio }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 191px;left: 0;width: 177%;">
+            <div style="position: absolute;top: 180px;left: 0;width: 177%;">
                 <span>{{ $informar->ciudad }}<span>&nbsp;</span>
             </div>
             <!-- Datos PUNTAJE materias -->
@@ -121,17 +121,17 @@
 
 
             <!-- DATOS COMPETENCIAS -->
-            <div style="position: absolute;top: 287px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 285px;left: 0;width: 128%;">
                 <span>{{ round($informar->Mat2Competencia1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 287px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 285px;left: 0;width: 140%;">
                 <span>{{ round($informar->Mat2Competencia2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 287px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 285px;left: 0;width: 153%;">
                 <span>{{ round($informar->Mat2Competencia3, 2) }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 317px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 315px;left: 0;width: 128%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat2Competencia1) >=0 && str_replace( ',', '.',$informar->Mat2Competencia1) <= 3)
                         I 
@@ -142,7 +142,7 @@
                     @endif 
                     <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 317px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 315px;left: 0;width: 140%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat2Competencia2) >=0 && str_replace( ',', '.',$informar->Mat2Competencia2) <= 3)
                         I 
@@ -153,7 +153,7 @@
                     @endif 
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 317px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 315px;left: 0;width: 153%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat2Competencia3) >=0 && str_replace( ',', '.',$informar->Mat2Competencia3) <= 3)
                         I 
@@ -165,17 +165,17 @@
                 <span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 347px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 345px;left: 0;width: 128%;">
                 <span>{{ round($informar->Mat1Competencia1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 347px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 345px;left: 0;width: 140%;">
                 <span>{{ round($informar->Mat1Competencia2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 347px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 345px;left: 0;width: 153%;">
                 <span>{{ round($informar->Mat1Competencia3, 2) }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 377px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 375px;left: 0;width: 128%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Competencia1) >=0 && str_replace( ',', '.',$informar->Mat1Competencia1) <= 3)
                         I 
@@ -186,7 +186,7 @@
                     @endif 
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 377px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 375px;left: 0;width: 140%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Competencia2) >=0 && str_replace( ',', '.',$informar->Mat1Competencia2) <= 3)
                         I 
@@ -197,7 +197,7 @@
                     @endif 
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 377px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 375px;left: 0;width: 153%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Competencia3) >=0 && str_replace( ',', '.',$informar->Mat1Competencia3) <= 3)
                         I 
@@ -211,17 +211,17 @@
 
             <!-- Competencia Materia 3  -->
 
-            <div style="position: absolute;top: 407px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 405px;left: 0;width: 128%;">
                 <span>{{ round($informar->Mat3Competencia1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 407px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 405px;left: 0;width: 140%;">
                 <span>{{ round($informar->Mat3Competencia2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 407px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 405px;left: 0;width: 153%;">
                 <span>{{ round($informar->Mat3Competencia3, 2) }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 437px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 435px;left: 0;width: 128%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat3Competencia1) >=0 && str_replace( ',', '.',$informar->Mat3Competencia1) <= 3)
                         I 
@@ -232,7 +232,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 437px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 435px;left: 0;width: 140%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat3Competencia2) >=0 && str_replace( ',', '.',$informar->Mat3Competencia2) <= 3)
                         I 
@@ -243,7 +243,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 437px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 435px;left: 0;width: 153%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat3Competencia3) >=0 && str_replace( ',', '.',$informar->Mat3Competencia3) <= 3)
                         I 
@@ -255,16 +255,16 @@
                 <span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 467px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 465px;left: 0;width: 128%;">
                 <span>{{ round($informar->Mat4Competencia1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 467px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 465px;left: 0;width: 140%;">
                 <span>{{ round($informar->Mat4Competencia2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 467px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 465px;left: 0;width: 153%;">
                 <span>{{ round($informar->Mat4Competencia3, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 497px;left: 0;width: 128%;">
+            <div style="position: absolute;top: 495px;left: 0;width: 128%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Competencia1) >=0 && str_replace( ',', '.',$informar->Mat4Competencia1) <= 3)
                         I 
@@ -275,7 +275,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 497px;left: 0;width: 140%;">
+            <div style="position: absolute;top: 495px;left: 0;width: 140%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Competencia2) >=0 && str_replace( ',', '.',$informar->Mat4Competencia2) <= 3)
                         I 
@@ -286,7 +286,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 497px;left: 0;width: 153%;">
+            <div style="position: absolute;top: 495px;left: 0;width: 153%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Competencia3) >=0 && str_replace( ',', '.',$informar->Mat4Competencia3) <= 3)
                         I 
@@ -305,17 +305,17 @@
 
             <!-- DATOS COMPONENTES -->
 
-            <div style="position: absolute;top: 346px;left: 0;width: 166%;">
+            <div style="position: absolute;top: 345px;left: 0;width: 166%;">
                 <span>{{ round($informar->Mat1Componentes1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 346px;left: 0;width: 176%;">
+            <div style="position: absolute;top: 345px;left: 0;width: 176%;">
                 <span>{{ round($informar->Mat1Componentes2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 346px;left: 0;width: 184%;">
+            <div style="position: absolute;top: 345px;left: 0;width: 184%;">
                 <span>{{ round($informar->Mat1Componentes3, 2) }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 376px;left: 0;width: 166%;">
+            <div style="position: absolute;top: 375px;left: 0;width: 166%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Componentes1) >=0 && str_replace( ',', '.',$informar->Mat1Componentes1) <= 2)
                         SB 
@@ -333,7 +333,7 @@
 
 
 
-            <div style="position: absolute;top: 376px;left: 0;width: 176%;">
+            <div style="position: absolute;top: 375px;left: 0;width: 176%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Componentes2) >=0 && str_replace( ',', '.',$informar->Mat1Componentes2) <= 2)
                         SB 
@@ -348,7 +348,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 376px;left: 0;width: 184%;">
+            <div style="position: absolute;top: 375px;left: 0;width: 184%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat1Componentes3) >=0 && str_replace( ',', '.',$informar->Mat1Componentes3) <= 2)
                         SB 
@@ -424,17 +424,17 @@
             -->
 
             
-            <div style="position: absolute;top: 467px;left: 0;width: 166%;">
+            <div style="position: absolute;top: 465px;left: 0;width: 166%;">
                 <span>{{ round($informar->Mat4Componentes1, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 467px;left: 0;width: 176%;">
+            <div style="position: absolute;top: 465px;left: 0;width: 176%;">
                 <span>{{ round($informar->Mat4Componentes2, 2) }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 467px;left: 0;width: 184%;">
+            <div style="position: absolute;top: 465px;left: 0;width: 184%;">
                 <span>{{ round($informar->Mat4Componentes3, 2) }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 497px;left: 0;width: 166%;">
+            <div style="position: absolute;top: 495px;left: 0;width: 166%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Componentes1) >=0 && str_replace( ',', '.',$informar->Mat4Componentes1) <= 2)
                         SB 
@@ -449,7 +449,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 497px;left: 0;width: 176%;">
+            <div style="position: absolute;top: 495px;left: 0;width: 176%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Componentes2) >=0 && str_replace( ',', '.',$informar->Mat4Componentes2) <= 2)
                         SB 
@@ -464,7 +464,7 @@
                     @endif
                 <span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 497px;left: 0;width: 184%;">
+            <div style="position: absolute;top: 495px;left: 0;width: 184%;">
                 <span>
                     @if( str_replace( ',', '.',$informar->Mat4Componentes3) >=0 && str_replace( ',', '.',$informar->Mat4Componentes3) <= 2)
                         SB 
