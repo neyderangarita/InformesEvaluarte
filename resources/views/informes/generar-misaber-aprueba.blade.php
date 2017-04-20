@@ -5,7 +5,7 @@
     </head>  
     <body>
         <div style="text-align: center; font: 80%; font-family: "Homer Simpson", cursive">
-            <img src="imagenes/misaberaprueba.jpg" />
+            <img src="imagenes/fondomisaberaprueba.jpeg" />
             <!-- Datos del personales del estudiante -->
             <div style="position: absolute;top: 138px;left: 0;width: 27%;">
                 <span>{{ $informar->codigo }}<span>&nbsp;</span>
