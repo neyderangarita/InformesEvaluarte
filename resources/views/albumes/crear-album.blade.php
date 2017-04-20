@@ -40,6 +40,7 @@
 								    <option value="tu saber">tu saber</option>
 								    <option value="saber 4,6,7 y 8">saber 4,6,7 y 8</option>
 								    <option value="saber 10 y 11 4 Preguntas Abiertas">saber 10 y 11 4 Preguntas Abiertas</option>
+								    <option value="Mi saber aprueba">Mi saber aprueba</option>
 								    <option value="perfil profesional">perfil profesional</option>
 								    <option value="saber pro">saber pro</option>
 								</select>
