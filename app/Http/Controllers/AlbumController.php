@@ -13,7 +13,7 @@ class AlbumController extends Controller {
 	{
 		$this->middleware('auth');
 	}
-
+	
 	public function getIndex()
 	{
 		// $usuario = Auth::user();
@@ -30,7 +30,8 @@ class AlbumController extends Controller {
     	{
     		return view('albumes.consultar-albumes', ['albumes' => $albumes]); 
     	}
-		else{
+		else
+		{
 			return redirect("/validado")->with('creada', 'No se han creados albumes');
 		}	
 	}

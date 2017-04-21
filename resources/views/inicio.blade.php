@@ -128,7 +128,7 @@
 
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
-										<a href="{{ url('/validado/informes/consultar-simulacro/Mi Saber Aprueba') }}">	
+										<a href="{{ url('/validado/albumes/consultar-albumes/Mi saber aprueba') }}">	
 											<img src="/imagenes/misaberaprueba.jpeg">
 										</a>
 								</div>
