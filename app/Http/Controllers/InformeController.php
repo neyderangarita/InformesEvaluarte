@@ -600,10 +600,17 @@ class InformeController extends Controller {
 	}
 
 	public function getResultadosInformes()
+	{	
+		//$informes =  \DB::table('informes')->paginate(15);	
+		//return view('informes.resultados-informes', ['informes' => $informes]);
+		return view('informes.resultados-informes');
+	}
+
+	public function getResultadosInformesfiltro($dato="")
 	{
-		
-		$informes =  \DB::table('informes')->paginate(15);	
-		return view('informes.resultados-informes', ['informes' => $informes]);
+		//$usuarios =  \DB::table('usuarios')->paginate(10);	
+		$informes= Informe::Busqueda($dato)->paginate(15);
+		return view('informes.resultados-informesfiltro')->with("informes", $informes );	
 	}
 
 	public function postEliminarInforme(EliminarInformeRequest $request)

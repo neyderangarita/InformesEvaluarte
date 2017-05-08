@@ -75,4 +75,20 @@ class Informe extends Model
 	{
 		return $this->belongTo('GestorImagenes\Usuario', 'codigo');
 	}
+
+
+    public function scopeBusqueda($query, $dato="")
+    {
+        $resultado= $query->where('codigo_simulacro','like','%'.$dato.'%')
+                              ->orWhere('NombreEstudiante','like', '%'.$dato.'%')
+                              ->orWhere('colegio','like', '%'.$dato.'%')
+                              ->orWhere('ciudad','like', '%'.$dato.'%')
+                              ->orWhere('FechaAplico','like', '%'.$dato.'%')	
+                              ->orWhere('simulacro','like', '%'.$dato.'%')
+                              ->orWhere('grado','like', '%'.$dato.'%')
+                              ->orWhere('codigo','like', '%'.$dato.'%')
+                              ->orWhere('puesto','like', '%'.$dato.'%');         
+        return  $resultado;
+    }
+
 }

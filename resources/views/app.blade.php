@@ -81,7 +81,5 @@
 	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script>
 	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
 	
-	<script src="{{ asset('js/sistemalaravel.js') }}"></script>
-
 </body>
 </html>
