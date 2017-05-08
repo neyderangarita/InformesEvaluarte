@@ -41,9 +41,9 @@
 					@elseif(Auth::user()->tipo === 'evaluarte')	
 						<li><a href="{{ url('/') }}">Inicio</a></li>	
 						<li><a href="{{ url('/validado/albumes/admin-informes') }}">Informes Administrador</a></li>
-						<li><a href="{{ url('/validado/informes/cargar-simulacros') }}">Subir resultados</a></li>
-						<li><a href="{{ url('/validado/usuario/listar-usuarios') }}">Listar Usuarios</a></li>
+						<li><a href="{{ url('/validado/informes/cargar-simulacros') }}">Subir resultados</a></li>				
 						<li><a href="{{ url('/validado/usuario/cargar-usuarios') }}">Subir Usuarios</a></li>
+						<li><a href="{{ url('/validado/usuario/listar-usuarios') }}">Listar Usuarios</a></li>
 						<li><a href="{{ url('/validado/informes/resultados-informes') }}">Listar resultados</a></li>
 
 					@elseif(Auth::user()->tipo === 'estudiante')	
@@ -80,7 +80,8 @@
 	<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script>
 	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
-	<!--<script src="{{ asset('js/sistemalaravel.js') }}"></script> -->
+	
+	<script src="{{ asset('js/sistemalaravel.js') }}"></script>
 
 </body>
 </html>

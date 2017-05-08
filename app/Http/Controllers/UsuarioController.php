@@ -40,8 +40,16 @@ class UsuarioController extends Controller {
 
 	public function getListarUsuarios()
 	{
-		$usuarios =  \DB::table('usuarios')->paginate(10);	
-		return view('usuario.listar-usuarios', ['usuarios' => $usuarios]);
+		//$usuarios =  \DB::table('usuarios')->paginate(10);	
+		//return view('usuario.listar-usuarios', ['usuarios' => $usuarios]);
+		return view('usuario.listar-usuarios');
+	}
+
+	public function getListarUsuariosfiltro($dato="")
+	{
+		//$usuarios =  \DB::table('usuarios')->paginate(10);	
+		$usuarios= Usuario::Busqueda($dato)->paginate(15);
+		return view('usuario.listar-usuariosfiltro')->with("usuarios", $usuarios );	
 	}
 
     public function getCargarUsuarios()

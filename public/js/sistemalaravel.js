@@ -1,23 +1,35 @@
 function buscarusuario(){
 
-  	var dato = $("#dato_buscado").val();
+    var dato = $("#dato_buscado").val();
     
     if(dato == "")
     {
-      alert("Consulta vacia");
+      var url="/validado/usuario/listar-usuariosfiltro/"+ " " +"";
     }
     else
     {
-      //var url="buscar_usuarios/"+pais+"/"+dato+"";
-      alert(dato);
+      var url="/validado/usuario/listar-usuariosfiltro/"+ dato +"";
     }
-  
-  	/*
-    $("#contenido_principal").html($("#cargador_empresa").html());
 
     $.get(url,function(resul){
         $("#contenido_principal").html(resul);  
-      })
+    })
+}
 
-	*/
+
+$(document).ready(function() {
+  buscarusuario();
+  $(document).on('click', '.pagination a', function (e) {
+              getPaginar($(this).attr('href').split('page=')[1]);
+              e.preventDefault();
+  });
+});
+
+function getPaginar(page) {
+  
+  var url='/validado/usuario/listar-usuariosfiltro/?page=' + page;
+
+  $.get(url,function(resul){
+    $("#contenido_principal").html(resul);  
+  })      
 }
