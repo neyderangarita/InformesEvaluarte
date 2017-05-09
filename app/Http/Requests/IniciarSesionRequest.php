@@ -13,8 +13,8 @@ class IniciarSesionRequest extends Request {
 	{
 		return [
 			'email' => 'required',
-			//'email' => 'required|email',
-			'password' => 'required'
+			'password' => 'required',
+			'g-recaptcha-response' => 'required',
 		];
 	}
 }

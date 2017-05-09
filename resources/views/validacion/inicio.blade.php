@@ -49,6 +49,7 @@
 							</div>
 						</div>
 
+
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
@@ -59,15 +60,18 @@
 							</div>
 						</div>
 
+						{!! Recaptcha::render() !!}
+
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
 									Iniciar sesión
 								</button>
-
-								<!-- <a href="/validacion/recuperar">Oldidé mi contraseña?</a> -->
 							</div>
 						</div>
+
+
+						
 					</form>
 
 

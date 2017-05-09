@@ -57,7 +57,7 @@ return [
 	"not_in"               => "The selected :attribute is invalid.",
 	"numeric"              => "The :attribute must be a number.",
 	"regex"                => "The :attribute format is invalid.",
-	"required"             => "The :attribute field is required.",
+	"required"             => "El campo :attribute es requerido.",
 	"required_if"          => "The :attribute field is required when :other is :value.",
 	"required_with"        => "The :attribute field is required when :values is present.",
 	"required_with_all"    => "The :attribute field is required when :values is present.",
@@ -73,6 +73,8 @@ return [
 	"unique"               => "The :attribute has already been taken.",
 	"url"                  => "The :attribute format is invalid.",
 	"timezone"             => "The :attribute must be a valid zone.",
+	"recaptcha" => "The :attribute field is not correct.",
+
 
 	/*
 	|--------------------------------------------------------------------------
@@ -102,6 +104,8 @@ return [
 	|
 	*/
 
-	'attributes' => [],
+	'attributes' => [
+		'g-recaptcha-response' => 'Captcha'
+	],
 
 ];
