@@ -151,7 +151,7 @@ return [
 		'Khill\Lavacharts\Laravel\LavachartsServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 
-		Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+		//Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 		
 		/*
 		 * Application Service Providers...
@@ -210,7 +210,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'PDF' 		=> 'Barryvdh\DomPDF\Facade',
 		'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
-		'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+		//'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
 	],
 
