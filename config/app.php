@@ -152,6 +152,8 @@ return [
 		'Maatwebsite\Excel\ExcelServiceProvider',
 
 		//Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
+
 		
 		/*
 		 * Application Service Providers...
@@ -211,6 +213,7 @@ return [
 		'PDF' 		=> 'Barryvdh\DomPDF\Facade',
 		'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
 		//'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+		'Recaptcha' => 'Greggilbert\Recaptcha\Facades\Recaptcha',
 
 	],
 
