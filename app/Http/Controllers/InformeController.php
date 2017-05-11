@@ -79,6 +79,48 @@ class InformeController extends Controller {
         return view('informes.generar-basica-primaria', ['informar' => $informar, 'lava' => $lava]);
 	}
 
+	public function getGenerarBasicaPrimariaNuevo($id, $idSimulacro)
+	{
+		$usuario = Auth::user();
+		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
+		$lava = new Lavacharts; // See note below for Laravel	
+		$materias = $lava->DataTable();
+		$materias->addStringColumn('Simulacros');
+		$materias->addNumberColumn($informar->Materia1);
+		$materias->addNumberColumn($informar->Materia3);
+		$materias->setDateTimeFormat('Y');
+
+		for ($i=0; $i < sizeof($informar); $i++) { 
+			$simu = '.';
+			$materias->addRow([
+				$simu,
+				$informar->proMat1,
+				$informar->proMat3
+				]);
+		}
+
+		$lava->ColumnChart('Simulacros', $materias, [
+		    'titleTextStyle' => [
+			        'color'    => '#6f6ae1',
+			        'fontSize' => 50,
+		    ],
+		    'legend' => ['position' => 'none'],
+		    'colors' => ['#d52e32', '#d89d3f'],
+		    'datatable' => $materias,
+		    'barGroupWidth'  =>  0, 
+		    'width' => 520,
+		    'height' => 330,
+		    'isStacked' => false,
+			'vAxis' => ['format' => 'decimal',
+						'minValue' => 0,
+						'maxValue' => 100,
+						],
+			'hAxis' => ['format' => 'decimal',
+			],
+		]);  
+        return view('informes.generar-basica-primaria-nuevo', ['informar' => $informar, 'lava' => $lava]);
+	}
+
 	public function getGenerarBasicaSecundaria($id, $idSimulacro)
 	{
 		$usuario = Auth::user();
@@ -127,6 +169,55 @@ class InformeController extends Controller {
         return view('informes.generar-basica-secundaria', ['informar' => $informar, 'lava' => $lava]);
 	}
 
+	public function getGenerarBasicaSecundariaNuevo($id, $idSimulacro)
+	{
+		$usuario = Auth::user();
+		$informar = Informe::where('codigo', $id)->where('codigo_simulacro', $idSimulacro)->first();
+		$lava = new Lavacharts; // See note below for Laravel	
+		$materias = $lava->DataTable();
+		$materias->addStringColumn('Simulacros');
+		$materias->addNumberColumn($informar->Materia1);
+		$materias->addNumberColumn($informar->Materia2);
+		$materias->addNumberColumn($informar->Materia3);
+		$materias->addNumberColumn($informar->Materia4);
+		//$materias->addNumberColumn('Edu. Economica y financiera');
+		$materias->setDateTimeFormat('Y');
+
+		for ($i=0; $i < sizeof($informar); $i++) { 
+			$simu = '.';
+			$materias->addRow([
+				$simu,
+				$informar->proMat1,
+				$informar->proMat2,
+				$informar->proMat3,
+				$informar->proMat4,
+				//$informar->competencias_ciudadanas,
+				]);
+		}
+
+		$lava->ColumnChart('Simulacros', $materias, [
+		    'titleTextStyle' => [
+			        'color'    => '#6f6ae1',
+			        'fontSize' => 50,
+		    ],
+		    'legend' => ['position' => 'none'],
+		    'colors' => ['#f1121c', '#eca40d', '#73b92b', '#8010c4'],
+		    'datatable' => $materias,
+		    'barGroupWidth'  =>  5,  ///int | 'string'
+		    'width' => 520,
+		    'height' => 330,
+		    'isStacked' => false,
+			'vAxis' => ['format' => 'decimal',
+						'minValue' => 0,
+						'maxValue' => 100,
+						],
+			'hAxis' => ['format' => 'decimal',
+			],
+		]);  
+        return view('informes.generar-basica-secundaria-nuevo', ['informar' => $informar, 'lava' => $lava]);
+	}
+
+
     public function getCargarSimulacros()
     {
     	return view('informes.cargar-simulacros');
@@ -135,8 +226,70 @@ class InformeController extends Controller {
     public function getConsultarSimulacro($simulacro)
     {
     	$usuario = Auth::user();
-    	$informes = Informe::where('codigo', '=', $usuario->id)->where('simulacro', $simulacro)->take(20)->get();
-    	
+    	$elementos = explode(" ", $simulacro);
+
+    	//dd("ddfs:".$elementos[0]);
+
+    	if($elementos[0] == '3')
+    	{
+    		$informes = Informe::where('codigo', '=', $usuario->id)	
+						->Where('simulacro','like', '%'.$elementos[0].'%')	
+						->Where('grado','=', '3°')->take(20)->get();	
+
+			//dd("cant informes:".sizeof($informes));	
+							
+			if(sizeof($informes) == 0){
+    			$informes = Informe::where('codigo', '=', $usuario->id)	
+						->Where('simulacro','like', '%'.$elementos[1].'%')
+						->Where('grado','=', '4°')->take(20)->get();
+			}
+
+			//dd("cant informes:".sizeof($informes));	
+
+			if(sizeof($informes) == 0){
+    			$informes = Informe::where('codigo', '=', $usuario->id)	
+						->Where('simulacro','like', '%'.$elementos[2].'%')
+						->Where('grado','=', '5°')->take(20)->get();
+			}
+
+			//dd("cant informes:".sizeof($informes));	
+			if(sizeof($informes) == 0){
+    			$informes = Informe::where('codigo', '=', $usuario->id)	
+						->Where('simulacro','like', '%'.$elementos[3].'%')
+						->Where('grado','=', '6°')->take(20)->get();
+			}
+
+			//dd("cant informes:".sizeof($informes));	
+			if(sizeof($informes) == 0){
+    			$informes = Informe::where('codigo', '=', $usuario->id)	
+						->Where('simulacro','like', '%'.$elementos[4].'%')
+						->Where('grado','=', '7°')->take(20)->get();
+			}
+
+			//dd("cant informes:".sizeof($informes));	
+			if(sizeof($informes) == 0){
+    			$informes = Informe::where('codigo', '=', $usuario->id)	
+						->Where('simulacro','like', '%'.$elementos[5].'%')
+						->whereIn('grado', ['8°', '9°'])->take(20)->get();
+			}
+			//dd("cant informes:".sizeof($informes));	
+
+			if(sizeof($informes) == 0){
+    			$informes = Informe::where('codigo', '=', $usuario->id)	
+						->Where('simulacro','like', '%'.$elementos[6].'%')
+						->Where('grado','=', '9°')->take(20)->get();
+			}
+			//dd("cant informes:".sizeof($informes));	
+    	}
+    	else
+    	{
+	    	$informes = Informe::where([
+			    ['codigo', '=', $usuario->id],
+			    ['simulacro','like', '%'.$simulacro.'%'],
+				])->take(20)->get();			 		
+    	}
+		
+		//dd("ddfs:".$elementos[1]);
     	if(sizeof($informes) > 0)
     	{
 	    	$lava = new Lavacharts; // See note below for Laravel	
@@ -227,7 +380,10 @@ class InformeController extends Controller {
 			}
 			else
 			{	
+
+				// verificar con las pruebas de evaluarte
 				$titulo= 'PUNTAJE GLOBAL';
+
 				if($informes[0]->grado == '10°' || $informes[0]->grado == '11°')
 				{
 					$materias->addNumberColumn('Lectura Crítica');
@@ -244,8 +400,9 @@ class InformeController extends Controller {
 				}
 				elseif($informes[0]->grado == '3°')
 				{
-					$materias->addNumberColumn('Lectura Crítica');
-					$materias->addNumberColumn('Matematicas');
+					$materias->addNumberColumn($informes[0]->Materia3);
+					$materias->addNumberColumn($informes[0]->Materia1);
+
 					$materias->setDateTimeFormat('Y');
 				
 					for ($i=0; $i < sizeof($informes); $i++) { 

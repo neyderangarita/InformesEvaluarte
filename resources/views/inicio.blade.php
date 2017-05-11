@@ -32,6 +32,15 @@
 
 					<div class="row">	
 
+
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/albumes/consultar-albumes/Mi saber aprueba') }}">	
+											<img src="/imagenes/misaberaprueba.jpeg">
+										</a>
+								</div>
+						</div>
+
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
 										<a href="{{ url('/validado/informes/consultar-simulacro/Tu saber') }}">	
@@ -42,7 +51,7 @@
 
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
-										<a href="{{ url('/validado/informes/consultar-simulacro/saber 4,6,7 y 8') }}">	
+										<a href="{{ url('/validado/informes/consultar-simulacro/3 4 5 6 7 8 9') }}">	
 											<img src="/imagenes/saber-3-9.png">
 										</a>								
 								</div>
@@ -59,7 +68,7 @@
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
 										<a href="{{ url('/validado/informes') }}">	
-											<img src="/imagenes/perfil-profesional.png">
+											<img src="/imagenes/saber-pro.png">
 										</a>
 								</div>
 						</div>
@@ -67,16 +76,7 @@
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
 										<a href="{{ url('/validado/informes') }}">	
-											<img src="/imagenes/saber-pro.png">
-										</a>
-								</div>
-						</div>
-
-
-						<div class="col-sm-4 col-md-offset-1">
-								<div class="thumbnail">
-										<a href="{{ url('/validado/informes/consultar-simulacro/Mi Saber Aprueba') }}">	
-											<img src="/imagenes/misaberaprueba.jpeg">
+											<img src="/imagenes/perfil-profesional.png">
 										</a>
 								</div>
 						</div>
@@ -126,13 +126,6 @@
 								</div>
 						</div>
 
-						<div class="col-sm-4 col-md-offset-1">
-								<div class="thumbnail">
-										<a href="{{ url('/validado/albumes/consultar-albumes/Mi saber aprueba') }}">	
-											<img src="/imagenes/misaberaprueba.jpeg">
-										</a>
-								</div>
-						</div>
 
 					</div>
 

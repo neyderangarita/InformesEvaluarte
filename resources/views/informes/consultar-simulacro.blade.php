@@ -36,23 +36,30 @@
 				<div class="thumbnail">
 					<div class="caption">	
 					    <H3>Simulacro {{ $index+1 }}</H3>
- 						@if($informe->simulacro == 'Tu saber')					
- 							<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
-	 						@if($informe->grado == 'JARDÍN' || $informe->grado == 'PREJARDÍN' || $informe->grado == 'TRANSICIÓN')
-	 							<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3) / 3}}</p>
-								<p><a href="/validado/informes/generar-saber-basica/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>					
-							@elseif($informe->grado == '10°' || $informe->grado == '11°')						    
-								<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3 + $informe->proMat4 + $informe->proMat5) / 5}}</p>
-								<p><a href="/validado/informes/generar-saber-superior/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
-							@else
-								<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3 + $informe->proMat4 + $informe->proMat5) / 5}}</p>	
-								<p><a href="/validado/informes/generar-saber-media/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
-							@endif
+						
+						<!-- {{$informe->simulacro}} -->
 
-						@elseif($informe->simulacro == 'saber 10 y 11 4 Preguntas Abiertas' || $informe->simulacro == 'saber 4,6,7 y 8' || $informe->simulacro == 'saber 3_Nuevo' || $informe->simulacro == 'saber 5_Nuevo')					 
-							<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
-							<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
+ 						@if($informe->simulacro == 'Tu saber')	
 
+ 								<!--Llamado al reporte de la prueba Tu saber -->
+	 							<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
+		 						@if($informe->grado == 'JARDÍN°' || $informe->grado == 'PREJARDÍN°' || $informe->grado == 'TRANSICIÓN°')
+		 							<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3) / 3}}</p>
+									<p><a href="/validado/informes/generar-saber-basica/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>					
+								@elseif($informe->grado == '10°' || $informe->grado == '11°')						    
+									<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3 + $informe->proMat4 + $informe->proMat5) / 5}}</p>
+									<p><a href="/validado/informes/generar-saber-superior/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
+								@else
+									<p><strong>Total:</strong> {{ ($informe->proMat1 + $informe->proMat2 + $informe->proMat3 + $informe->proMat4 + $informe->proMat5) / 5}}</p>	
+									<p><a href="/validado/informes/generar-saber-media/{{$informe->id}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
+								@endif
+
+						@elseif($informe->simulacro == 'saber 10 y 11 4 Preguntas Abiertas' || $informe->simulacro == 'saber 4,6,7 y 8')					 
+								
+								<!--Llamado al reporte de la prueba Saber 4 6 7 8 + saber 10 y 11 preguntas abiertas -->
+								<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
+								<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
+								
 								@if($informe->grado == '10°' || $informe->grado == '11°')
 									<p><a href="/validado/informes/generar-media-vocacional/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>									
 								@elseif($informe->grado == '3°' || $informe->grado == '4°')						    
@@ -60,13 +67,28 @@
 								@elseif($informe->grado == '5°' || $informe->grado == '6°' || $informe->grado == '7°' || $informe->grado == '8°' || $informe->grado == '9°')	
 									<p><a href="/validado/informes/generar-basica-secundaria/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
 								@endif	
-						@elseif($informe->simulacro == 'Mi Saber Aprueba')
+
+						@elseif($informe->simulacro == 'saber 3_Nuevo' || $informe->simulacro == 'saber 5_Nuevo' || $informe->simulacro == 'saber 9_Nuevo') 					 
+								<!--Llamado al reporte de la prueba Saber 3 5 9 son solo 4 materias aqui falta cambiar el fondo 5-->
+								<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
+								<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
+
+								@if($informe->grado == '3°')
+									<p><a href="/validado/informes/generar-basica-primaria-nuevo/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
+								@elseif($informe->grado == '5°' || $informe->grado == '9°')	
+									<p><a href="/validado/informes/generar-basica-secundaria-nuevo/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
+								@endif	
+
+						@elseif($informe->simulacro == 'Mi Saber Aprueba')	
+								<!--Llamado al reporte de la prueba Mi saber aprueba -->
 								<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
 								<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>		 
 								@if($informe->grado == '10°' || $informe->grado == '11°')
 									<p><a href="/validado/informes/generar-misaber-aprueba/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>									
 								@endif	
+
 						@endif
+
 					</div>
 				</div>
 			</div>
