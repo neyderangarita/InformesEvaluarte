@@ -400,8 +400,8 @@ class InformeController extends Controller {
 				}
 				elseif($informes[0]->grado == '3°')
 				{
-					$materias->addNumberColumn($informes[0]->Materia3);
 					$materias->addNumberColumn($informes[0]->Materia1);
+					$materias->addNumberColumn($informes[0]->Materia3);
 
 					$materias->setDateTimeFormat('Y');
 				
@@ -409,8 +409,8 @@ class InformeController extends Controller {
 						$simu = 'Simulacro '. ($i+1) ; 
 						$materias->addRow([
 							$simu, 
-							$informes[$i]->proMat3, 
-							$informes[$i]->proMat1  
+							$informes[$i]->proMat1, 
+							$informes[$i]->proMat3  
 						]);
 					} 
 				}
