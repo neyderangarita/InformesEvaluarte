@@ -17,34 +17,34 @@
                 </div>
 
                 <div style="position: absolute;top: 730px;left: 290px;width: 86px;">
-                    <span>{{ $informar->proMat4}}<span>&nbsp;</span>
-                </div>
-
-                <div style="position: absolute;top: 730px;left: 395px;width: 86px;">
                     <span>{{ $informar->proMat2}}<span>&nbsp;</span>
                 </div>
 
+                <div style="position: absolute;top: 730px;left: 395px;width: 86px;">
+                    <span>{{ $informar->proMat3}}<span>&nbsp;</span>
+                </div>
+
                 <div style="position: absolute;top: 730px;left: 506px;width: 86px;">
-                    <span>{{ $informar->proMat5}}<span>&nbsp;</span>
+                    <span>{{ $informar->proMat4}}<span>&nbsp;</span>
                 </div>
 
                 <div style="position: absolute;top: 730px;left: 603px;width: 86px;">
-                    <span>{{ $informar->competencias_ciudadanas}}<span>&nbsp;</span>
+                    <span>{{ $informar->proMat5}}<span>&nbsp;</span>
                 </div>
 
                 <div style="position: absolute;top: 800px;left: 320px;width: 86px;">
-                    <span>{{ round(($informar->proMat1 + $informar->proMat4 + $informar->proMat2 + $informar->proMat5 + $informar->competencias_ciudadanas)/ 5)}}<span>&nbsp;</span>
+                    <span>{{ round(($informar->proMat1 + $informar->proMat4 + $informar->proMat2 + $informar->proMat5 + $informar->proMat3)/ 5)}}<span>&nbsp;</span>
                 </div>
 
                 <div style="position: absolute;top: 800px;left: 594px;width: 86px;">
                     <span>
                         <?php 
-                            $media = round(($informar->proMat1 + $informar->proMat4 + $informar->proMat2 + $informar->proMat5 + $informar->competencias_ciudadanas)/ 5);
+                            $media = round(($informar->proMat1 + $informar->proMat4 + $informar->proMat2 + $informar->proMat5 + $informar->proMat3)/ 5);
                             $devs = [];
 
-                            $array = array($informar->proMat1, $informar->proMat4, $informar->proMat2, $informar->proMat5, $informar->competencias_ciudadanas);
+                            $array = array($informar->proMat1, $informar->proMat4, $informar->proMat2, $informar->proMat5, $informar->proMat3);
                             foreach ($array as $key =>$valor) {
-                                $devs[$key]  = pow($valor-round(($informar->proMat1 + $informar->proMat4 + $informar->proMat2 + $informar->proMat5 + $informar->competencias_ciudadanas)/ 5), 2); 
+                                $devs[$key]  = pow($valor-round(($informar->proMat1 + $informar->proMat4 + $informar->proMat2 + $informar->proMat5 + $informar->proMat3)/ 5), 2); 
                             }                 
                             $varianza = sqrt(array_sum($devs)/(count($devs)-1));
                         ?>

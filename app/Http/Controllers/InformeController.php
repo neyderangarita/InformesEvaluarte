@@ -128,22 +128,22 @@ class InformeController extends Controller {
 		$lava = new Lavacharts; // See note below for Laravel	
 		$materias = $lava->DataTable();
 		$materias->addStringColumn('Simulacros');
-		$materias->addNumberColumn('Matematicas');
-		$materias->addNumberColumn('Lenguaje');
-		$materias->addNumberColumn('Ciencias Naturales');
-		$materias->addNumberColumn('Competencias ciudadanas');
-		$materias->addNumberColumn('Edu. Economica y financiera');
+		$materias->addNumberColumn($informar->Materia1);
+		$materias->addNumberColumn($informar->Materia2);
+		$materias->addNumberColumn($informar->Materia3);
+		$materias->addNumberColumn($informar->Materia4);
+		$materias->addNumberColumn($informar->Materia5);
 		$materias->setDateTimeFormat('Y');
 
 		for ($i=0; $i < sizeof($informar); $i++) { 
-			$simu = '.';
+			$simu = '.';	
 			$materias->addRow([
 				$simu,
 				$informar->proMat1,
-				$informar->proMat4,
 				$informar->proMat2,
+				$informar->proMat3,
+				$informar->proMat4,
 				$informar->proMat5,
-				$informar->competencias_ciudadanas,
 				]);
 		}
 
@@ -431,19 +431,19 @@ class InformeController extends Controller {
 				}
 				elseif($informes[0]->grado == '5°')
 				{
-					$materias->addNumberColumn('Lectura Crítica');
-					$materias->addNumberColumn('Matematicas');
-					$materias->addNumberColumn('Competencias ciudadanas');
-					$materias->addNumberColumn('Ciencias Naturales');
+					$materias->addNumberColumn($informes[0]->Materia1);
+					$materias->addNumberColumn($informes[0]->Materia2);
+					$materias->addNumberColumn($informes[0]->Materia3);
+					$materias->addNumberColumn($informes[0]->Materia4);
 					$materias->setDateTimeFormat('Y');
 				
 					for ($i=0; $i < sizeof($informes); $i++) { 
 						$simu = 'Simulacro '. ($i+1) ; 
 						$materias->addRow([$simu, 
-							$informes[$i]->proMat2, 
-							$informes[$i]->proMat1,
-							$informes[$i]->proMat4,
-							$informes[$i]->proMat3]);
+							$informes[$i]->proMat1, 
+							$informes[$i]->proMat2,
+							$informes[$i]->proMat3,
+							$informes[$i]->proMat4]);
 					}
 				}
 				elseif($informes[0]->grado == '6°' || $informes[0]->grado == '7°' || $informes[0]->grado == '8°')
@@ -491,6 +491,7 @@ class InformeController extends Controller {
 					        'color'    => '#6f6ae1',
 					        'fontSize' => 25,
 				    ],
+				    'colors' => ['#f1121c', '#eca40d', '#73b92b', '#8010c4', '#7af4eb'],
 				    'width' => 650,
 				    'height' => 500,
 				    'isStacked'           => true,
