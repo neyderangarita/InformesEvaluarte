@@ -299,7 +299,7 @@ class InformeController extends Controller {
 			if($simulacro == 'Tu saber')
 			{
 				$titulo= 'PROMEDIO';
-				if($informes[0]->grado == 'JARDÍN' || $informes[0]->grado == 'PREJARDÍN' || $informes[0]->grado == 'TRANSICIÓN' )
+				if($informes[0]->grado == 'JARDÍN°' || $informes[0]->grado == 'PREJARDÍN°' || $informes[0]->grado == 'TRANSICIÓN°' )
 				{
 					$materias->addNumberColumn('Cognitiva');
 					$materias->addNumberColumn('Comunicativa');
