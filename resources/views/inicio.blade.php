@@ -35,7 +35,7 @@
 
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
-										<a href="{{ url('/validado/albumes/consultar-albumes/Mi saber aprueba') }}">	
+										<a href="{{ url('/validado/informes/consultar-simulacro/Mi saber aprueba') }}">	
 											<img src="/imagenes/misaberaprueba.jpeg">
 										</a>
 								</div>
@@ -85,7 +85,17 @@
 
 				@elseif(Auth::user()->tipo === 'colegio')
 
-					<div class="row">		
+					<div class="row">
+
+
+						<div class="col-sm-4 col-md-offset-1">
+								<div class="thumbnail">
+										<a href="{{ url('/validado/albumes/consultar-albumes/Mi saber aprueba') }}">	
+											<img src="/imagenes/misaberaprueba.jpeg">
+										</a>
+								</div>
+						</div>
+
 						<div class="col-sm-4 col-md-offset-1">
 								<div class="thumbnail">
 										<a href="{{ url('/validado/albumes/consultar-albumes/tu saber') }}">	
