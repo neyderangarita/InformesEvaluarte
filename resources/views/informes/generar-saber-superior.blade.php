@@ -53,7 +53,7 @@
             <div style="position: absolute;top: 157px;left: 86px;width: 350px;">
                 <span>{{ $informar->NombreEstudiante }}<span>&nbsp;</span>
             </div>
-            <div style="position: absolute;top: 157px;left: 446px;width: 250px;">
+            <div style="position: absolute;top: 157px;left: 446px;width: 286px;">
                 <span>{{ $informar->colegio }}<span>&nbsp;</span>
             </div>
             <div style="position: absolute;top: 198px;left: 556px;width:116px;">

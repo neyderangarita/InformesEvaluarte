@@ -39,29 +39,30 @@
                     <span>&nbsp;</span>
                 </div>
             <!-- Datos del personales del estudiante -->
-            <div style="position: absolute;top: 152px;left: 117px;width: 313px;">
+            <div style="position: absolute;top: 156px;left: 80px;width: 350px;">
                 <span>{{ $informar->NombreEstudiante }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 152px;left: 521px;width: 86px;">
+            <div style="position: absolute;top: 156px;left: 481px;width: 286px;">
                 <span>{{ $informar->colegio }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 195px;left: 586px;width: 86px;">
+            <div style="position: absolute;top: 195px;left: 586px;width: 100px;">
                 <span>{{ $informar->codigo }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 195px;left: 387px;width: 86px;">
+            <div style="position: absolute;top: 195px;left: 387px;width: 100px;">
                 <span>{{ $informar->FechaAplico }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 195px;left: 218px;width: 86px;">
+            <div style="position: absolute;top: 195px;left: 218px;width: 100px;">
                 <span>{{ $informar->puesto }}<span>&nbsp;</span>
             </div>
 
-            <div style="position: absolute;top: 195px;left: 84px;width: 86px;">
+            <div style="position: absolute;top: 195px;left: 84px;width: 100px;">
                 <span>{{ $informar->grado }}<span>&nbsp;</span>
             </div>
+
             <!-- Datos PUNTAJE materias  -->
         <div style="position: absolute;left: 0px;width: 0px;">
              <button  type="button" class="btn btn-default" onClick="window.print()">Imprimir</button>
