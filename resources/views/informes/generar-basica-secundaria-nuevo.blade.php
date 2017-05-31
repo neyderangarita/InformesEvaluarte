@@ -42,7 +42,7 @@
                             foreach ($array as $key =>$valor) {
                                 $devs[$key]  = pow($valor-round(($informar->proMat1 + $informar->proMat2 + $informar->proMat3 + $informar->proMat4)/ 4), 2); 
                             }                 
-                            $varianza = sqrt(array_sum($devs)/(count($devs)-1));
+                            $varianza = sqrt(array_sum($devs)/(count($devs)));
                         ?>
                         <?php 
                             echo  round($varianza, 1);
