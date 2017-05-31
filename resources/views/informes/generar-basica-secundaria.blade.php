@@ -49,7 +49,7 @@
                             $varianza = sqrt(array_sum($devs)/(count($devs)));
                         ?>
                         <?php 
-                            echo  round($varianza, 1);
+                            echo  round($varianza);
                          ?>       
                     <span>&nbsp;</span>
                 </div>
