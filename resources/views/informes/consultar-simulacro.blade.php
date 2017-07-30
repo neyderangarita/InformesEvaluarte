@@ -68,6 +68,13 @@
 									<p><a href="/validado/informes/generar-basica-secundaria/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>						
 								@endif	
 
+						@elseif($informe->simulacro == 'saber 3,5 y 9 Nuevo 2017') 					 
+								<!--Llamado al reporte de la prueba Saber 3 5 9 son solo 4 materias aqui falta cambiar el fondo 5-->
+								<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
+								<p><strong>Fecha Aplicación:</strong> {{ $informe->FechaAplico }}</p>
+
+								<p><a href="/validado/informes/generar-basica-primaria-nuevo/{{$informe->codigo}}/{{$informe->codigo_simulacro}}" target="_blank" class="btn btn-primary" role="button">Ver Simulacro</a></p>														
+
 						@elseif($informe->simulacro == 'saber 3_Nuevo' || $informe->simulacro == 'saber 5_Nuevo' || $informe->simulacro == 'saber 9_Nuevo') 					 
 								<!--Llamado al reporte de la prueba Saber 3 5 9 son solo 4 materias aqui falta cambiar el fondo 5-->
 								<p><strong>Total:</strong> {{ $informe->proTotal }}</p>
