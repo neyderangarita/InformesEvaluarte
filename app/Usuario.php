@@ -25,12 +25,8 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 
     public function scopeBusqueda($query, $dato="")
     {
-        $resultado= $query->where('id','like','%'.$dato.'%')
-                              ->orWhere('nombre','like', '%'.$dato.'%')
-                              ->orWhere('tipo','like', '%'.$dato.'%')
-                              ->orWhere('email','like', '%'.$dato.'%'); 
-        
-        return  $resultado;
+
+        return  "";
     }
 
 }
